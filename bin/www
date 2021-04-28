@@ -1,0 +1,95 @@
+#!/usr/bin/env node
+//to je zlo pomemna skripta. To skripto dejansko skompile-amo, da si kreiramo server.
+//To nardimo tko, da v cmd napisemo node ./bin/www.
+//Se lazje je to z npm - napisemo npm start (to bo izvedlo vse ukaze, ki jih imamo v package.json zapisane pod -> scripts -> start. Pri nas je to samo ukaz "node ./bin/www", zato bo izvedlo
+//isto stvar k zgoraj
+//Z nodemon je to se lazje. V cmd naapisemo samo nodemon - on ti sam zažene npm start (ki ti potem zazene "node ./bin/www")
+
+/**
+ * Module dependencies.
+ */
+//nalozimo server, ki smo ga prej kreirali v skripti (modulu) app.js.
+var app = require('../app');
+var debug = require('debug')('lp-11:server');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort('3000'); //changed (process.env.PORT || '3000') -> ('3000')
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

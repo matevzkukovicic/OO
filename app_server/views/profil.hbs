@@ -1,0 +1,15 @@
+
+
+
+<div class="col-12 center logo container align-self-center">
+    <p style="text-align:center">Profil</p>
+    <p style="text-align:center">{{customValue2}}</p>
+    <p style="text-align:center">{{user.ime}}  {{user.priimek}}</p>
+    {{#each user.objave as |objava|}}
+        <div class="card border-secondary col-6 mt-2  center">
+            <p style="text-align:center">{{objava.naslov}}  {{objava.datum}}</p>
+            <img src="../images/{{objava.slika.src}}">
+        </div>
+    {{/each}}
+
+</div>

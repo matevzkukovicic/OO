@@ -1,0 +1,24 @@
+{
+  "name": "PetBuddy",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": ">=14.10.1",
+    "npm": ">=6.14.8"
+  },
+  "dependencies": {
+    "bootstrap": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "hbs": "*",
+    "http-errors": "*",
+    "jquery": "*",
+    "morgan": "*",
+    "popper.js": "*",
+    "slate": "*"
+  }
+}

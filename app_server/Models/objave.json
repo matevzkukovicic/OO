@@ -1,0 +1,15 @@
+[
+  {
+  "id": 1,
+  "naslov": "To je moja macka",
+  "datum": "1.1.2021",
+  "stVseckov": 50,
+  "slika" : {}
+  },{
+  "id": 2,
+  "naslov": "To je moj pes",
+  "datum": "1.1.2021",
+  "stVseckov": 5,
+  "slika" : {}
+  }
+]
