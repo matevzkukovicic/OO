@@ -3,7 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-#Zemljevid, #Prijava, #Profil, #PetBdy {
+#Zemljevid,
+#Prijava,
+#Profil,
+#PetBdy {
   color: white;
 }
 
@@ -12,14 +15,17 @@ body {
   font-size: 150%;
 }
 
-#Zemljevid:hover, #Prijava:hover, #Profil:hover, #PetBdy:hover{
+#Zemljevid:hover,
+#Prijava:hover,
+#Profil:hover,
+#PetBdy:hover {
   color: darkgrey;
 }
 
-.center{
+.center {
   margin: auto;
 }
-.inputstyle{
+.inputstyle {
   width: 100%;
   align-content: center;
 }
@@ -30,7 +36,7 @@ body {
   margin: auto;
 }
 .gumb {
-  margin-top:5px;
+  margin-top: 5px;
   padding-top: 0px;
   padding-bottom: 2px;
   padding-right: 5px;
@@ -38,147 +44,151 @@ body {
 }
 .gumb_pr {
   width: 85%;
-  margin-top:7px;
+  margin-top: 7px;
   padding-top: 4px;
   padding-bottom: 6px;
   padding-right: 5px;
   padding-left: 5px;
 }
 .cont {
-  width :75%;
+  width: 75%;
 }
-.mar-bot_map{
+.mar-bot_map {
   margin-bottom: 2rem;
 }
-.pad-top_map{
+.pad-top_map {
   padding-top: 2rem;
 }
 
-.iscitext_map{
+.iscitext_map {
   font-size: 3vw;
   font-weight: bold;
-
 }
-.displayName_map{
+.displayName_map {
   font-size: 2rem;
   min-font-size: 50px;
 }
-.fa-star_map{
+.fa-star_map {
   font-size: 3vw;
 }
-.check{
+.check {
   color: darkorange;
 }
-.displayName_profile p1{
-   font-size: 5em;
- color: dodgerblue;
- }
+.displayName_profile p1 {
+  font-size: 5em;
+  color: dodgerblue;
+}
 .WCDisplayName_profile {
- font-size: 2rem;
- margin: auto;
- padding: 1em;
+  font-size: 2rem;
+  margin: auto;
+  padding: 1em;
 }
-.stars_profile{
- margin-top: 0.5rem;
- font-size: 1.5rem;
- display: inline-block;
- white-space: nowrap;
-
-}
-
-.komentar_profile{
- margin:auto;
- padding-top: 40px;
-}
-.gumb_profile{
- margin-right:1rem;
+.stars_profile {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  white-space: nowrap;
 }
 
-.LDImg_profile{
- max-height: 80px;
- max-width: 80px;
+.komentar_profile {
+  margin: auto;
+  padding-top: 40px;
 }
-.datum-komentar_profile{
- font-size: 1.3rem;
+.gumb_profile {
+  margin-right: 1rem;
 }
-.noW{
- white-space: nowrap;
+
+.LDImg_profile {
+  max-height: 80px;
+  max-width: 80px;
 }
-.WCprofilna_profile{
- margin-top: 1.3rem;
+.datum-komentar_profile {
+  font-size: 1.3rem;
 }
-.mar-top_profile{
- margin-top: 2rem;
+.noW {
+  white-space: nowrap;
 }
-.pad-top_profile{
- padding-top: 1rem;
+.WCprofilna_profile {
+  margin-top: 1.3rem;
 }
-.profilnaSlika_rz{
+.mar-top_profile {
+  margin-top: 2rem;
+}
+.pad-top_profile {
+  padding-top: 1rem;
+}
+.profilnaSlika_rz {
   max-height: 500px;
   max-width: 500px;
 }
-.WCDisplayName_rz p1{
+.WCDisplayName_rz p1 {
   font-size: 5vw;
   max-font-size: 5rem;
 }
-.displayStars_rz{
+.displayStars_rz {
   font-size: 3.2vw;
   max-font-size: 1rem;
-
 }
-.displayCard_rz{
-   margin-bottom: 2rem;
-   margin-top: 2rem;
+.displayCard_rz {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
-.metadata_rz{
-font-weight: bold;
+.metadata_rz {
+  font-weight: bold;
 }
-.metadata-display_rz{
-font-size: 1.2rem;
+.metadata-display_rz {
+  font-size: 1.2rem;
 }
 .ReviewDisplayName_review {
- font-size: 2rem;
+  font-size: 2rem;
 }
 
-
-.fa-star_review:hover{
- color: darkorange;
+.fa-star_review:hover {
+  color: darkorange;
 }
 
-.reviewStars_review{
- font-size: 4.5vw;
+.reviewStars_review {
+  font-size: 4.5vw;
 }
 
-#review{
- padding-bottom: 5em;
+#review {
+  padding-bottom: 5em;
 }
-.pad-bot_review{
+.pad-bot_review {
   padding-bottom: 2rem;
 }
-.LDImg_zp{
+.LDImg_zp {
   max-height: 80px;
   max-width: 80px;
 }
 .ReviewDisplayName_zp {
   font-size: 2rem;
 }
-.LDCount_zp{
+.LDCount_zp {
   font-size: 1.8rem;
 }
-.datumKomentarja_zp{
+.datumKomentarja_zp {
   font-size: 1.1rem;
 }
-.komentarText_zp{
+.komentarText_zp {
   font-size: 1.2rem;
   padding: 0.6rem;
 }
-.pad-bot_zp{
+.pad-bot_zp {
   padding-bottom: 2rem;
 }
-.neverClicked{
+.neverClicked {
   color: white !important;
 }
 
-div.user, div.admin {
-display: none;
+div.user,
+div.admin {
+  display: none;
+}
+
+.mapdiv path {
+  fill: #cc1100;
+  stroke: #dece0c;
+  stroke-width: 4px;
+  transition: fill 0.3s;
 }

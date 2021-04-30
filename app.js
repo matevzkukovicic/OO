@@ -27,7 +27,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'))); //dodamo se public stvari (to so statične stvari - images,zunanje js knjiznice (bootstrap), ipd.)
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Dejanska konfiguracija route-anja.

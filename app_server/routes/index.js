@@ -13,9 +13,7 @@ const ctrlMain = require('../controllers/main');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
-router.get('/profile', ctrlMain.prijava);
-
-
+router.get('/:region', ctrlMain.index);
 
 
 module.exports = router;

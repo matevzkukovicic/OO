@@ -1,27 +1,17 @@
-var uporabnik = require("../models/uporabnik.json")
-var objave = require("../Models/objave.json")
-var slikeZivali = require("../Models/slikeZivali.json")
-
-
-//ker mora bit uporabnik povezan z objavo, ga povezem tukaj (zaenkrat, to bo v bazi itak ze povezano)
-uporabnik.objave = objave;
-uporabnik.objave[0].slika = slikeZivali[0];
-uporabnik.objave[1].slika = slikeZivali[1];
-
-
 const index = (req, res) => {
-    res.render('home', { title: 'PET BUDDY' });
-};
+    let fs = require('fs');
+    let svgTemplate = fs.readFileSync('./public/images/slovenia.svg', 'utf8');
+    
+    let selectedRegion = req.params.region; 
 
-const prijava = (req, res) => {
-    res.render('profil', {
-        title: 'PET BUDDY',
-        customValue2: 'Jaz sem value od  customValue2',
-        user: uporabnik
-    });
+    switch(selectedRegion) {
+        case("obalno-kraska"): 
+            console.log("KLIKNU SI NA OBALNO-KRAŠKO REGIJO");
+    }
+
+    res.render('home', { title: 'PandaMia', map: svgTemplate, regija: selectedRegion});
 };
 
 module.exports = {
-    index,
-    prijava
+    index
 };
