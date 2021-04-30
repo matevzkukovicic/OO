@@ -7,6 +7,7 @@ const index = (req, res) => {
     switch(selectedRegion) {
         case("obalno-kraska"): 
             console.log("KLIKNU SI NA OBALNO-KRAŠKO REGIJO");
+            
     }
 
     res.render('home', { title: 'PandaMia', map: svgTemplate, regija: selectedRegion});
