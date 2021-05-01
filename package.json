@@ -10,6 +10,7 @@
     "npm": ">=6.14.8"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "*",
     "cookie-parser": "*",
     "debug": "*",
@@ -19,6 +20,8 @@
     "jquery": "*",
     "morgan": "*",
     "popper.js": "*",
-    "slate": "*"
+    "s": "^1.0.0",
+    "slate": "*",
+    "xmlhttprequest": "^1.8.0"
   }
 }

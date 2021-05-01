@@ -7,8 +7,8 @@
     {{log 'Izbrana regija je' regija}}
 
 </div>
-
-<div class="modal" id="myModal">
+{{#if regionName}}
+<div class="modal show d-block" id="newModal" data-toggle="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -18,13 +18,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <p>izbrana regija: {{regionName}}</p>
+                <p>aktivno število okužb: {{activeCases}}</p>
+                <p>število potrjenih okužb do sedaj: {{confirmedToDate}}</p>
+                <p>število umrlih do sedaj: {{deceasedToDate}}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="/"><button type="button" class="btn btn-secondary">Close</button></a>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 </div>
+{{/if}}
