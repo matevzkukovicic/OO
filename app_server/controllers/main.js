@@ -5,7 +5,7 @@ const axios = require('axios').create({
 
 const index = async(req, res) => {
     let fs = require('fs');
-    let svgTemplate = fs.readFileSync('./public/images/slovenia.svg', 'utf8');
+    let svgTemplate = fs.readFileSync('./public/images/temp.svg', 'utf8');
     
     let selectedRegion = req.params.region; 
 
@@ -39,34 +39,34 @@ const index = async(req, res) => {
     */ 
   
     let regionKey; 
-    switch(selectedRegion) {
-      case("podravska"): 
-        regionKey = covidStats.regions.mb; 
-      case("jugovzhodna"): 
-        regionKey = covidStats.regions.nm;   
-      case("obalno-kraska"):
-        regionKey = covidStats.regions.kp;
-        console.log(regionKey);
-        console.log(covidStats.regions.kp);
-      case("savinjska"): 
-        regionKey = covidStats.regions.ce; 
-      case("gorenjska"): 
-        regionKey = covidStats.regions.kr; 
-      case("posavska"): 
-        regionKey = covidStats.regions.kk; 
-      case("koroska"): 
-        regionKey = covidStats.regions.sg;
-      case("goriska"): 
-        regionKey = covidStats.regions.ng; 
-      case("osrednjeslovenska"): 
-        regionKey = covidStats.regions.lj; 
-      case("notranjsko-kraska"): 
-        regionKey = covidStats.regions.po;  
-      case("pomurska"): 
+    console.log("PODATKI:", covidStats.regions);
+    console.log("SELECTED REGION: ", selectedRegion);
+    if(selectedRegion === "podravska") {
+      regionKey = covidStats.regions.mb; 
+    } else if(selectedRegion === "jugovzhodna") {
+      regionKey = covidStats.regions.nm;   
+    } else if(selectedRegion === "obalno-kraska") {
+      regionKey = covidStats.regions.kp;
+    } else if(selectedRegion === "savinjska") {
+      regionKey = covidStats.regions.ce; 
+    } else if(selectedRegion === "gorenjska") {
+      regionKey = covidStats.regions.kr; 
+    } else if(selectedRegion === "spodnjeposavska") {
+      regionKey = covidStats.regions.kk; 
+    } else if(selectedRegion === "koroska") {
+      regionKey = covidStats.regions.sg;
+    } else if(selectedRegion === "goriska") {
+      regionKey = covidStats.regions.ng; 
+    } else if(selectedRegion === "osrednjeslovenska") {
+      regionKey = covidStats.regions.lj;
+    } else if(selectedRegion === "notranjsko-kraska") {
+      regionKey = covidStats.regions.po;  
+    } else if(selectedRegion === "pomurska") {
+        console.log("koji kurac");
         regionKey = covidStats.regions.ms; 
-      case("zasavska"): 
+      } else if(selectedRegion === "zasavska") {
+        console.log("a tuki tud al kaj");
         regionKey = covidStats.regions.za; 
-          
     }
 
     console.log(regionKey);

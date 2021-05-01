@@ -1,14 +1,12 @@
 <h1>{{title}}</h1>
-<div class="mapdiv" style="  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;">
-    {{{map}}}
-    {{log 'Izbrana regija je' regija}}
-
+<div class="mapdiv" style="display: grid; height: 50%;">
+    <div class="center-fit" style="max-width: 100%;
+            max-height: 100vh;
+            margin: auto;">
+        {{{map}}}
+    </div>
 </div>
-{{#if regionName}}
-<div class="modal show d-block" id="newModal" data-toggle="modal" role="dialog">
+{{#if regionName}} <div class=" modal show d-block" id="newModal" data-toggle="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -29,6 +27,5 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 {{/if}}
