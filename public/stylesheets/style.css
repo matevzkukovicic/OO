@@ -2,11 +2,17 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-/*
-.mapdiv path {
-  fill: #cc1100;
-  stroke: #dece0c;
-  stroke-width: 4px;
-  transition: fill 0.3s;
+
+@font-face {
+  font-family: Repro_screen;
+  src: url("./fonts/ABC_Repro/ABCRepro-Screen-Trial.woff");
 }
-*/
+
+@font-face {
+  font-family: Repro_bold;
+  src: url("./fonts/ABC_Repro/ABCRepro-Bold-Trial.otf");
+}
+
+modalDiv {
+  font-family: Repro;
+}

@@ -7,81 +7,86 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const index = async(req, res) => {
     let fs = require('fs');
-    let svgTemplate = fs.readFileSync('./public/images/temp.svg', 'utf8');
     getRegijeData()
     
     let selectedRegion = req.params.region; 
-
     if(selectedRegion && selectedRegion !== "favicon.ico") {
-    let covidStats; 
-    
-    const resp = await axios.get('regions');
+      
+      const resp = await axios.get('regions');
+      let numOfData = Object.keys(resp.data).length;
+      let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
+      
+      let covidStats; 
+      if(!regionStats.mb) {
+        covidStats = resp.data[numOfData-2];
+      } else {
+        covidStats = regionStats; 
+      }
 
-    let numOfData = Object.keys(resp.data).length;
-    let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
+      /* REGION STATS 
+        mb: PODRAVSKA 
+        nm: JUGOVZHODNA
+        kp: OBALNO-KRAŠKA
+        ce: SAVINJSKA
+        kr: GORENJSKA
+        kk: POSAVSKA
+        sg: KOROŠKA
+        ng: GORIŠKA
+        lj: OSREDNJESLOVENSKA
+        po: PRIMORSKO-NOTRANJSKA
+        ms: POMURSKA
+        za: ZASAVSKA
+      */ 
     
-    if(!regionStats.mb) {
-      covidStats = resp.data[numOfData-2];
-    } else {
-      covidStats = regionStats; 
-    }
-
-    /* REGION STATS 
-      mb: PODRAVSKA 
-      nm: JUGOVZHODNA
-      kp: OBALNO-KRAŠKA
-      ce: SAVINJSKA
-      kr: GORENJSKA
-      kk: POSAVSKA
-      sg: KOROŠKA
-      ng: GORIŠKA
-      lj: OSREDNJESLOVENSKA
-      po: PRIMORSKO-NOTRANJSKA
-      ms: POMURSKA
-      za: ZASAVSKA
-    */ 
-  
-    let regionKey; 
-    console.log("PODATKI:", covidStats.regions);
-    console.log("SELECTED REGION: ", selectedRegion);
-    if(selectedRegion === "podravska") {
-      regionKey = covidStats.regions.mb; 
-    } else if(selectedRegion === "jugovzhodna") {
-      regionKey = covidStats.regions.nm;   
-    } else if(selectedRegion === "obalno-kraska") {
-      regionKey = covidStats.regions.kp;
-    } else if(selectedRegion === "savinjska") {
-      regionKey = covidStats.regions.ce; 
-    } else if(selectedRegion === "gorenjska") {
-      regionKey = covidStats.regions.kr; 
-    } else if(selectedRegion === "spodnjeposavska") {
-      regionKey = covidStats.regions.kk; 
-    } else if(selectedRegion === "koroska") {
-      regionKey = covidStats.regions.sg;
-    } else if(selectedRegion === "goriska") {
-      regionKey = covidStats.regions.ng; 
-    } else if(selectedRegion === "osrednjeslovenska") {
-      regionKey = covidStats.regions.lj;
-    } else if(selectedRegion === "notranjsko-kraska") {
-      regionKey = covidStats.regions.po;  
-    } else if(selectedRegion === "pomurska") {
-        console.log("koji kurac");
+      let regionKey; 
+      let region; 
+      if(selectedRegion === "podravska") {
+        regionKey = covidStats.regions.mb; 
+        region = regije.podravska;
+      } else if(selectedRegion === "jugovzhodna") {
+        regionKey = covidStats.regions.nm;   
+        region = regije.jugovzhodna;
+      } else if(selectedRegion === "obalno-kraska") {
+        regionKey = covidStats.regions.kp;
+        region = regije.obalno_kraska;
+      } else if(selectedRegion === "savinjska") {
+        regionKey = covidStats.regions.ce; 
+        region = regije.savinjska;
+      } else if(selectedRegion === "gorenjska") {
+        regionKey = covidStats.regions.kr; 
+        region = regije.gorenjska;
+      } else if(selectedRegion === "spodnjeposavska") {
+        regionKey = covidStats.regions.kk; 
+        region = regije.posavska;
+      } else if(selectedRegion === "koroska") {
+        regionKey = covidStats.regions.sg;
+        region = regije.koroska;
+      } else if(selectedRegion === "goriska") {
+        regionKey = covidStats.regions.ng; 
+        region = regije.goriska;
+      } else if(selectedRegion === "osrednjeslovenska") {
+        regionKey = covidStats.regions.lj;
+        region = regije.osrednjeslovenska;
+      } else if(selectedRegion === "notranjsko-kraska") {
+        regionKey = covidStats.regions.po;  
+        region = regije.primorsko_notranjska;
+      } else if(selectedRegion === "pomurska") {
         regionKey = covidStats.regions.ms; 
+        region = regije.pomurska;
       } else if(selectedRegion === "zasavska") {
-        console.log("a tuki tud al kaj");
         regionKey = covidStats.regions.za; 
+        region = regije.zasavska;
+      }
+
+      region.activeCases = regionKey.activeCases; 
+      region.confirmedToDate = regionKey.confirmedToDate; 
+      region.deceasedToDate = regionKey.deceasedToDate;
+
+      console.log(region);
+      res.render('home', { title: 'PandaMia', region:region});
+    } else {
+      res.render('home', { title: 'PandaMia'});
     }
-
-    console.log(regionKey);
-
-    let activeCases = regionKey.activeCases; 
-    let confirmedToDate = regionKey.confirmedToDate; 
-    let deceasedToDate = regionKey.deceasedToDate;
-    res.render('home', { title: 'PandaMia', map: svgTemplate, regionName: selectedRegion, activeCases:activeCases, confirmedToDate:confirmedToDate, deceasedToDate:deceasedToDate});
-  } else {
-    res.render('home', { title: 'PandaMia', map: svgTemplate});
-    
-  }
 };
 
 
@@ -90,8 +95,7 @@ function getRegijeData() {
     var xmlhttp = new XMLHttpRequest()
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            const arr = new jsdom.JSDOM(this.responseText)
-            console.log("halo?!?!?")
+            const arr = new jsdom.JSDOM(this.responseText)            
             //console.log(arr.window.document.querySelector("table").tBodies[0].rows[0].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""))
             regije.gorenjska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[0].cells[0].children[0].children[0].innerHTML.trim(),
@@ -110,6 +114,7 @@ function getRegijeData() {
                 omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
                 strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
             }
+
             //console.log(regije.goriska.ime, "\n", regije.goriska.skupina, "\n", regije.goriska.soleInFakultete, "\n", regije.goriska.omejitevGibanja, "\n", regije.goriska.omejitveZbiranja, "\n", regije.goriska.strezbaHraneInPijace)
             regije.jugovzhodna = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[2].cells[0].children[0].children[0].innerHTML.trim(),
@@ -214,30 +219,33 @@ function getRegijeData() {
 }
 
 class regija {
-    constructor(ime,skupina, soleInFakultete, omejitevGibanja, omejitveZbiranja,strezbaHraneInPijace) {
-        this.ime = ime
-        this.skupina = skupina
-        this.soleInFakultete = soleInFakultete
-        this.omejitevGibanja = omejitevGibanja
-        this.omejitveZbiranja = omejitveZbiranja
-        this.strezbaHraneInPijace = strezbaHraneInPijace
-    }
+  constructor(ime,skupina, soleInFakultete, omejitevGibanja, omejitveZbiranja,strezbaHraneInPijace, activeCases, confirmedToDate, deceasedToDate) {
+    this.ime = ime
+    this.skupina = skupina
+    this.soleInFakultete = soleInFakultete
+    this.omejitevGibanja = omejitevGibanja
+    this.omejitveZbiranja = omejitveZbiranja
+    this.strezbaHraneInPijace = strezbaHraneInPijace
+    this.activeCases = activeCases; 
+    this.confirmedToDate = confirmedToDate; 
+    this.deceasedToDate = deceasedToDate;
+  }
 }
 var regije = {
-    gorenjska: new regija(),
-    goriska: new regija(),
-    jugovzhodna: new regija(),
-    koroska: new regija(),
-    obalno_kraska: new regija(),
-    osrednjeslovenska: new regija(),
-    podravska: new regija(),
-    pomurska: new regija(),
-    posavska: new regija(),
-    primorsko_notranjska: new regija(),
-    savinjska: new regija(),
-    zasavska: new regija()
+  gorenjska: new regija(),
+  goriska: new regija(),
+  jugovzhodna: new regija(),
+  koroska: new regija(),
+  obalno_kraska: new regija(),
+  osrednjeslovenska: new regija(),
+  podravska: new regija(),
+  pomurska: new regija(),
+  posavska: new regija(),
+  primorsko_notranjska: new regija(),
+  savinjska: new regija(),
+  zasavska: new regija()
 }
 
 module.exports = {
-    index
+  index
 };
