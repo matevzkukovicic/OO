@@ -12,8 +12,9 @@ const ctrlMain = require('../controllers/main');
 
 
 /* GET home page. */
-router.get('/', ctrlMain.index);
-router.get('/:region', ctrlMain.index);
+router.get('/', ctrlMain.loadingScreen);
+router.get('/map', ctrlMain.index);
+router.get('/map/:region', ctrlMain.index);
 
 
 module.exports = router;

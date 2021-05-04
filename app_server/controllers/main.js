@@ -5,6 +5,11 @@ const axios = require('axios').create({
 const jsdom = require("jsdom")
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
+
+const loadingScreen = (req, res) => {
+  res.render('loadingScreen', {layout: false});
+};
+
 const index = async(req, res) => {
     let fs = require('fs');
     getRegijeData()
@@ -247,5 +252,5 @@ var regije = {
 }
 
 module.exports = {
-  index
+  index, loadingScreen
 };
