@@ -94,7 +94,6 @@ const index = async(req, res) => {
     }
 };
 
-
 function getRegijeData() {
     var url = "https://www.gov.si/zbirke/seznami/ukrepi-za-zajezitev-sirjenja-covid-19-po-regijah/"
     var xmlhttp = new XMLHttpRequest()
@@ -251,6 +250,11 @@ var regije = {
   zasavska: new regija()
 }
 
+const eu = (req, res) => {
+  console.log("AAAAAAAAAAAAAA");
+  res.render('euTravel');
+}
+
 module.exports = {
-  index, loadingScreen
+  index, loadingScreen, eu
 };

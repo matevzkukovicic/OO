@@ -1,9 +1,89 @@
-<svg width="127" height="69" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z" fill="black"/>
-<path d="M120.015 49.0118C134.297 32.1348 121.146 9.48032 103.661 2.2897C87.768 -4.24655 72.3758 12.4368 71.6331 29.6058C70.238 61.8543 109.9 60.965 120.015 49.0118Z" fill="black"/>
-<path d="M6.84394 49.0118C-7.43781 32.1348 5.71328 9.48032 23.1979 2.2897C39.0914 -4.24655 54.4836 12.4368 55.2263 29.6058C56.6214 61.8543 16.9591 60.965 6.84394 49.0118Z" fill="black"/>
-<circle cx="89.8931" cy="30.6903" r="10.6236" fill="white"/>
-<circle r="10.6236" transform="matrix(-1 0 0 1 36.9663 30.6903)" fill="white"/>
-<ellipse rx="6.19708" ry="6.49218" transform="matrix(-1 0 0 1 86.6472 34.8217)" fill="black"/>
-<ellipse cx="40.2122" cy="34.8217" rx="6.19708" ry="6.49218" fill="black"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="127"
+   height="69"
+   viewBox="0 0 127 69"
+   fill="none"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="logotipOko.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="11.877302"
+     inkscape:cx="63.5"
+     inkscape:cy="31.132232"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <path
+     d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z"
+     fill="black"
+     id="path2" />
+  <path
+     d="M120.015 49.0118C134.297 32.1348 121.146 9.48032 103.661 2.2897C87.768 -4.24655 72.3758 12.4368 71.6331 29.6058C70.238 61.8543 109.9 60.965 120.015 49.0118Z"
+     fill="black"
+     id="path4" />
+  <path
+     d="M6.84394 49.0118C-7.43781 32.1348 5.71328 9.48032 23.1979 2.2897C39.0914 -4.24655 54.4836 12.4368 55.2263 29.6058C56.6214 61.8543 16.9591 60.965 6.84394 49.0118Z"
+     fill="black"
+     id="path6" />
+  <circle
+     cx="89.8931"
+     cy="30.6903"
+     r="10.6236"
+     fill="white"
+     id="circle8" />
+  <circle
+     r="10.6236"
+     transform="matrix(-1 0 0 1 36.9663 30.6903)"
+     fill="white"
+     id="circle10" />
+  <circle
+     transform="scale(-1,1)"
+     fill="#000000"
+     id="ellipse12"
+     cx="-86.477898"
+     cy="34.119461"
+     style="stroke-width:0.945937"
+     r="6" />
+  <circle
+     cx="40.436214"
+     cy="34.91888"
+     fill="#000000"
+     id="ellipse14"
+     style="stroke-width:0.945937"
+     r="6" />
 </svg>

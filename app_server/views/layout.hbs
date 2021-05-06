@@ -11,41 +11,56 @@
   <link rel='stylesheet' href="/stylesheets/bootstrap.min.css" type="text/css">
   <link rel='stylesheet' href="/stylesheets/style.css">
 </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-md-3">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 
-<body class="pt-5">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/" id="Pandamia"><span class="fas fa-map-marked-alt"></span>PandaMia</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/map"><button type="button" class="btn btn-secondary">SLO</button></a>
+            <a href="/eu"><button type="button" class="btn btn-secondary">EU</button></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="nav navbar-nav navbar-center">
+      <svg width="127" height="69" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z"
+          fill="black" />
+        <path
+          d="M120.015 49.0118C134.297 32.1348 121.146 9.48032 103.661 2.2897C87.768 -4.24655 72.3758 12.4368 71.6331 29.6058C70.238 61.8543 109.9 60.965 120.015 49.0118Z"
+          fill="black" />
+        <path
+          d="M6.84394 49.0118C-7.43781 32.1348 5.71328 9.48032 23.1979 2.2897C39.0914 -4.24655 54.4836 12.4368 55.2263 29.6058C56.6214 61.8543 16.9591 60.965 6.84394 49.0118Z"
+          fill="black" />
+        <circle class="eyeball" cx="89.8931" cy="30.6903" r="10.6236" fill="white" />
+        <circle class="eyeball" r="10.6236" transform="matrix(-1 0 0 1 36.9663 30.6903)" fill="white" />
+        <ellipse class="pupil" rx="6.19708" ry="6.49218" transform="matrix(-1 0 0 1 86.6472 34.8217)" fill="black" />
+        <ellipse class="pupil" cx="40.2122" cy="34.8217" rx="6.19708" ry="6.49218" fill="black" />
+      </svg>
 
+    </ul>
+
+    <div class="navbar-collapse collapse my-2 my-lg-0">
+      <ul class="navbar-nav ms-auto justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu</a>
+        </li>
+      </ul>
+    </div>
   </nav>
+
   <main>
     <div class="container-fluid mt-4 content">
 
       {{{body}}}
     </div>
-    <div>
-      <footer class="mt-5">
-        <div class="row">
-          <div class="col-12 center">
-            <small>&copy; PandaMia</small>
-          </div>
-          <div class="col-12 right">
-            <p>Podatki o okužbah so bili pridobljeni preko <a href="https://covid-19.sledilnik.org/sl/data">Sledilnik
-                API-ja</a></p>
-            <a href="https://covid-19.sledilnik.org"><img src="../images/sledilnik-logo.png"
-                style=" width:150px; height:50px;"></a>
-          </div>
-        </div>
-      </footer>
-    </div>
   </main>
-  <script src="/javascripts/jquery-3.5.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="/javascripts/bootstrap.min.js"></script>
 </body>
 
+<script>
+
+</script>
 </html>

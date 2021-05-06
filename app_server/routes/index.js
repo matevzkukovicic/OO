@@ -6,15 +6,13 @@
 var express = require('express');
 var router = express.Router();
 
-//nalozimo kontorlerje
 const ctrlMain = require('../controllers/main');
-
-
 
 /* GET home page. */
 router.get('/', ctrlMain.loadingScreen);
 router.get('/map', ctrlMain.index);
 router.get('/map/:region', ctrlMain.index);
+router.get('/eu', ctrlMain.eu);
 
 
 module.exports = router;
