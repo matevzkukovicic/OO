@@ -10,6 +10,10 @@ const loadingScreen = (req, res) => {
   res.render('loadingScreen', {layout: false});
 };
 
+const semafor = (req, res) => {
+    res.render('semafor')
+}
+
 const index = async(req, res) => {
     let fs = require('fs');
     getRegijeData()
@@ -252,5 +256,5 @@ var regije = {
 }
 
 module.exports = {
-  index, loadingScreen
+  index, loadingScreen, semafor
 };
