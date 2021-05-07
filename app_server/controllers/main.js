@@ -109,110 +109,110 @@ function getRegijeData() {
             regije.gorenjska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[0].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[0].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[0].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[0].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
             //console.log(regije.gorenjska.ime, "\n", regije.gorenjska.skupina, "\n", regije.gorenjska.soleInFakultete, "\n", regije.gorenjska.omejitevGibanja, "\n", regije.gorenjska.omejitveZbiranja, "\n", regije.gorenjska.strezbaHraneInPijace)
             regije.goriska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[1].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[1].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[1].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[1].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             //console.log(regije.goriska.ime, "\n", regije.goriska.skupina, "\n", regije.goriska.soleInFakultete, "\n", regije.goriska.omejitevGibanja, "\n", regije.goriska.omejitveZbiranja, "\n", regije.goriska.strezbaHraneInPijace)
             regije.jugovzhodna = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[2].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[2].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[2].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[2].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.koroska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[3].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[3].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[3].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[3].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.obalno_kraska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[4].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[4].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[4].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[4].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.osrednjeslovenska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[5].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[5].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[5].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[5].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.podravska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[6].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[6].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[6].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[6].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.pomurska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[7].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[7].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[7].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[7].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.posavska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[8].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[8].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[8].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[8].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.primorsko_notranjska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[9].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[9].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[9].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[9].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.savinjska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[10].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[10].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[10].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[10].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
 
             regije.zasavska = {
                 ime:arr.window.document.querySelector("table").tBodies[0].rows[11].cells[0].children[0].children[0].innerHTML.trim(),
                 skupina: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[1].children[0].innerHTML.trim(),
-                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[11].cells[2].children[0].children[0].innerHTML.trim(),
-                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[3].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[4].children[0].children[0].innerHTML.trim().replace("<br>",""),
-                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","")
+                soleInFakultete:arr.window.document.querySelector("table").tBodies[0].rows[11].cells[2].children[0].children[0].innerHTML.trim().replace("\n", " "),
+                omejitevGibanja: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[3].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                omejitveZbiranja: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[4].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " "),
+                strezbaHraneInPijace: arr.window.document.querySelector("table").tBodies[0].rows[11].cells[5].children[0].children[0].innerHTML.trim().replace("<br>","").replace("\n", " ")
             }
         }
         /*
