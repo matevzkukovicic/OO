@@ -1,55 +1,154 @@
-<style>
-	.naslov{
-		margin-left:5%;
-		margin-top: 2%;
-		margin-bottom: 3%;
+<head>
+	<style>
+		.naslov{
+			margin-left:5%;
+			margin-top: 2%;
+			margin-bottom: 3%;
 
-		font-family: Repro_screen;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 56px;
-		line-height: 80px;
+			font-family: Repro_screen;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 56px;
+			line-height: 80px;
 
-		color: #000000;
-	}
-	.faza{
-		height: 100px;
-		width: 100%;
-		border: 2px solid black;
-		border-radius: 1rem;
-		display: flex;
-		flex-wrap: wrap;
-	}
-</style>
-<div>
+			color: #000000;
+		}
+		.faza{
+			height: 100px;
+			width: 100%;
+			border: 2px solid black;
+			border-radius: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+		}
+	</style>
+</head>
 	<div>
 		<h1 class="naslov">SEMAFOR</h1>
 	</div>
 	<div>
-		<div class="faza" style="background-color: #7B7C7E">
-		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
+		<div class="faza" style="background-color: #7B7C7E" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalCrna">
+			<div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen;
+			 margin-left: 20px">
 			Črna
-		  </div>
+			</div>
 		</div>
-		<div class="faza" style="background-color: #E66C58; margin-top: 14px">
+		<div class="faza" style="background-color: #E66C58; margin-top: 14px"  type="button" data-toggle="modal" data-target="#exampleModal" id="openModalRdeca">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Rdeča
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FDBB65">
+		<div class="faza" style="margin-top: 14px; background-color: #FDBB65" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalOranzna">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Oranžna
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FFF3AE;">
+		<div class="faza" style="margin-top: 14px; background-color: #FFF3AE;" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalRumena">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Rumena
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #AFEFD8;">
+		<div class="faza" style="margin-top: 14px; background-color: #AFEFD8;" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalZelena">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Zelena
 		  </div>
 		</div>
 	</div>
+</div>
+<!-- Crna -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Rdeca -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

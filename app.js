@@ -10,6 +10,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('./app_server/views/helpers/hbsh.js');
 
 //notranji/lokalni moduli
   // - basically js skripte (page-i) , ki jih mi sprogramiramo.

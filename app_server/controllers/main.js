@@ -17,7 +17,8 @@ const semafor = (req, res) => {
 const index = async(req, res) => {
     let fs = require('fs');
     getRegijeData()
-    
+    res.render('home', { title: 'PandaMia', regions:regije});
+    /*
     let selectedRegion = req.params.region; 
     if(selectedRegion && selectedRegion !== "favicon.ico") {
       
@@ -30,7 +31,7 @@ const index = async(req, res) => {
         covidStats = resp.data[numOfData-2];
       } else {
         covidStats = regionStats; 
-      }
+      }*/
 
       /* REGION STATS 
         mb: PODRAVSKA 
@@ -46,7 +47,7 @@ const index = async(req, res) => {
         ms: POMURSKA
         za: ZASAVSKA
       */ 
-    
+    /*
       let regionKey; 
       let region; 
       if(selectedRegion === "podravska") {
@@ -94,8 +95,8 @@ const index = async(req, res) => {
       console.log(region);
       res.render('home', { title: 'PandaMia', region:region});
     } else {
-      res.render('home', { title: 'PandaMia'});
-    }
+      res.render('home', { title: 'PandaMia', region:region});
+    }*/
 };
 
 function getRegijeData() {
@@ -220,7 +221,7 @@ function getRegijeData() {
         }
         console.log("idegas")*/
     }
-    xmlhttp.open("GET", url, true)
+    xmlhttp.open("GET", url, false)
     xmlhttp.send()
     //console.log(regije.zasavska.ime)
 
