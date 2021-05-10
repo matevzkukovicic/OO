@@ -264,8 +264,7 @@ const drzave= require('../models/staticData/CountriesOfEurope.json');
 
 
 const eu = async(req, res) => {
-
-    res.render('drzave', { page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex });
+    res.render('drzave', { page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex,polprehodneDrzave: drzave.polprehodneIndex });
 
 };
 //endregion
