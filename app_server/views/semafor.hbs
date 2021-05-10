@@ -21,34 +21,53 @@
 			display: flex;
 			flex-wrap: wrap;
 		}
+        .cls-1 {
+            background: #7b7c7e;
+        }
+
+        .cls-4 {
+            background: #fff3ae;
+        }
+
+        .cls-3 {
+            background: #fcbb65;
+        }
+
+        .cls-5 {
+            background: #afefd8;
+        }
+
+        .cls-2 {
+            background: #e56c58;
+        }
 	</style>
 </head>
 	<div>
 		<h1 class="naslov">SEMAFOR</h1>
 	</div>
 	<div>
-		<div class="faza" style="background-color: #7B7C7E" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalCrna">
+		<div class="faza" style="background-color: #7B7C7E" type="button" data-toggle="modal" data-target="#crnaModal" id="openModalCrna">
 			<div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen;
 			 margin-left: 20px">
 			Črna
 			</div>
 		</div>
-		<div class="faza" style="background-color: #E66C58; margin-top: 14px"  type="button" data-toggle="modal" data-target="#exampleModal" id="openModalRdeca">
+		<div class="faza" style="background-color: #E66C58; margin-top: 14px"  type="button" data-toggle="modal" data-target="#rdecaModal" id="openModalRdeca">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Rdeča
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FDBB65" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalOranzna">
+		<div class="faza" style="margin-top: 14px; background-color: #FDBB65" type="button" data-toggle="modal" data-target="#oranznaModal" id="openModalOranzna">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Oranžna
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FFF3AE;" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalRumena">
+		<div class="faza" style="margin-top: 14px; background-color: #FFF3AE;" type="button" data-toggle="modal" data-target="#rumenaModal" id="openModalRumena">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Rumena
 		  </div>
 		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #AFEFD8;" type="button" data-toggle="modal" data-target="#exampleModal" id="openModalZelena">
+		<div class="faza" style="margin-top: 14px; background-color: #AFEFD8;" type="button" data-toggle="modal" data-target="#zelenaModal" id="openModalZelena">
 		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
 			Zelena
 		  </div>
@@ -56,98 +75,117 @@
 	</div>
 </div>
 <!-- Crna -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="crnaModal" tabindex="-1" aria-labelledby="crnaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header cls-1">
+        <h5 class="modal-title" id="crnaModalLabel" style="font-size: 32px">Črna faza</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" style="font-size: 25px">
+          <p><b>Črna faza</b> je v uporabi, ko je v državi sedemdnevno povprečje števila okuženih nad 1350 in
+            število hospitaliziranih bolnikov s covid-19 nad 1200. V črni fazi velja:</p>
+            <ul>
+                <li>omejitev gibanja v nočnem času,</li>
+                <li>omejeno je delovanje javnega potniškega prometa,</li>
+                <li>obratujejo le nujne trgovine, lekarne, pošte, banke,</li>
+                <li>odprti so vrtci in šole za učence prve triade, za ostale poteka izobraževanje na daljavo,</li>
+                <li>izvajajo se lahko nujne laboratorijske vaje za študente,</li>
+                <li>treningi in tekmovanja le za vrhunske športnike oz. člane državnih reprezentanc,</li>
+                <li>dovoljena je brezkontaktna športna aktivnost na prostem in individualna vadba ter vadba družin.</li>
+            </ul>
       </div>
     </div>
   </div>
 </div>
 <!-- Rdeca -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="rdecaModal" tabindex="-1" aria-labelledby="rdecaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header cls-2">
+        <h5 class="modal-title" id="rdecaModalLabel" style="font-size: 32px">Rdeča faza</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" style="font-size: 25px">
+      <p><b>Rdeča</b> je faza, ko je v državi povprečno število okužb v zadnjih sedmih dnevih nižje kot 1350,
+          število hospitaliziranih bolnikov s covid-19 pa je nižje od 1200. V tej fazi ukrepi dovoljujejo:</p>
+      <ul>
+          <li>vrtci in osnovne šole so odprti v celoti, srednje šole po modelu C,</li>
+          <li>na fakultetah so dovoljeni izpiti in seminarji do 10 oseb,</li>
+          <li>odprti so muzeji, knjižnice, galerije,</li>
+          <li>dovoljene so brezkontaktne športne aktivnosti v skupini do 10 oseb,</li>
+          <li>odprte so nekatere servisne storitve, trgovine,</li>
+          <li>odprti so dijaški domovi,</li>
+          <li>dovoljen je individualni pouk v glasbenih šolah, izvedba baleta ter sodobnega plesa,</li>
+          <li>dovoljeni so treningi in tekmovanja za kadete in mladince,</li>
+          <li>odprta so smučišča.</li>
+      </ul>
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<!--Oranzna-->
+<div class="modal fade" id="oranznaModal" tabindex="-1" aria-labelledby="oranznaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header cls-3">
+        <h5 class="modal-title" id="oranznaModalLabel" style="font-size: 32px">Oranžna faza</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" style="font-size: 25px">
+        <p>V <b>oranžni fazi</b> je država takrat, ko je sedemdnevno povprečje manj kot 1000
+          okuženih in hospitaliziranih manj kot 1000 bolnikov s covid-19.  V tej fazi so:</p>
+        <ul>
+            <li>pouk poteka tudi na fakultetah in višjih šolah,</li>
+            <li>dovoljeno zbiranje do 10 oseb,</li>
+            <li>v celoti odprte trgovine, delno sprostijo gostinske storitve (terase in vrtovi),</li>
+            <li>odprti so študentski domovi,</li>
+            <li>sprosti gibanje med regijami.</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<!--Rumena-->
+<div class="modal fade" id="rumenaModal" tabindex="-1" aria-labelledby="rumenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header cls-4">
+        <h5 class="modal-title" id="rumenaModalLabel" style="font-size: 32px">Rumena faza</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" style="font-size: 25px">
+       <p>V rumeni fazi je sedemdnevno povprečje manj kot 600 okuženih in hospitaliziranih
+           manj kot 500 bolnikov s covid-19. V <b>rumeni fazi</b>:</p>
+        <ul>
+            <li>odprejo se turistične nastanitve,</li>
+            <li>pouk v srednjih šolah in na fakultetah poteka brez omejitev.</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<!--Zelena-->
+<div class="modal fade" id="zelenaModal" tabindex="-1" aria-labelledby="zelenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header cls-5">
+        <h5 class="modal-title" id="zelenaModalLabel" style="font-size: 32px">Zelena faza</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" style="font-size: 25px">
+          <p>V <b>zeleno fazo</b>, v kateri se <b>odpravijo omejitve po celotni državi razen obratovanja barov in diskotek</b>,
+              bo država vstopila, ko bo sedemdnevno povprečje okuženih nižje od 300.</p>
       </div>
     </div>
   </div>

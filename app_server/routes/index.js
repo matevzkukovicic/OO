@@ -16,6 +16,7 @@ router.get('/', ctrlMain.loadingScreen);
 router.get('/map', ctrlMain.index);
 router.get('/map/:region', ctrlMain.index);
 router.get('/eu', ctrlMain.eu);
+router.get('/semafor', ctrlMain.semafor);
 
 
 module.exports = router;
