@@ -1,0 +1,46 @@
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script>
+    (function($){
+        jQuery('.dropdown-menu a').on('click', function () {
+        var id = $(this).attr('id');
+        executeAction(id);
+    });
+
+    executeAction = function (id) {
+        console.log("id: " + id)
+        switch (id) {
+
+            case "deletelist":
+
+                break;
+        }
+    }
+    }(jQuery));
+
+</script>
+
+
+
+<div class="" >
+    <div class="col container">
+            <div class=" text-center displayName_profile">
+                <p id="countryDisplay_Name"><b>PREHODI MED DRŽAVAMI</b></p>
+            </div>
+            <div class ="row">
+                <div class="btn-group col-5 align-self-center">
+                    <p id = "sloNapis" class = "text-center" ><b>SLOVENIJA</b></p>
+                </div>
+                <div class = "col-2"><img src="../images/arrow-right.png" class ="img-responsive"> </div>
+                <div class="btn-group dropright col-5 align-self-center text-center">
+                    <button class="drzavaButton align-self-center btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Large button
+                    </button>
+                    <div class="dropdown-menu drzavaButton" aria-labelledby="dropdownMenuButton">
+                    {{#each drzave as |drzava|}}
+                        <a class="dropdown-item" id="{{drzava}}">{{drzava}}</a>
+                    {{/each}}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
