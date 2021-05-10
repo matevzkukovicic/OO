@@ -1,0 +1,25 @@
+<div class=" modal show" id="regionModal" data-toggle="modal" role="dialog" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" style="font-family: Repro_bold;">{{region.ime}}</h3>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title" style="font-family: Repro_screen;">
+                    <p>odprtost šol in fakultet: {{region.soleInFakultete}}</p>
+                    <p>omejitve gibanja: {{region.omejitevGibanja}}</p>
+                    <p>omejitve zbiranja: {{region.omejitveZbiranja}}</p>
+                    <p>strežba hrane in pijače: {{region.strezbaHraneInPijace}}</p>
+                    <p>aktivno število okužb: {{region.activeCases}}</p>
+                    <p>število potrjenih okužb do sedaj: {{region.confirmedToDate}}</p>
+                    <p>število umrlih do sedaj: {{region.deceasedToDate}}</p>
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <a href="/map"><button type="button" class="btn btn-primary"
+                        style="font-family: Repro_screen;">Zapri</button></a>
+            </div>
+        </div>
+    </div>
+</div>
