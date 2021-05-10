@@ -26,6 +26,10 @@
 #prehodJeMogoc {
     background: #AFEFD8 !important;
 }
+#prehodDelnoMogoc
+{
+    background: #FFFF66 !important;
+}
 #no_pad_right {
     padding-left: 0 !important;
 }
