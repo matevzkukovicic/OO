@@ -255,10 +255,20 @@ var regije = {
   zasavska: new regija()
 }
 
-const eu = (req, res) => {
-  console.log("AAAAAAAAAAAAAA");
-  res.render('euTravel');
-}
+
+
+//region drzave
+
+//nalaganje staticnih podatkov
+const drzave= require('../models/staticData/CountriesOfEurope.json');
+
+
+const eu = async(req, res) => {
+
+    res.render('drzave', { page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex });
+
+};
+//endregion
 
 module.exports = {
   index, loadingScreen, semafor, eu

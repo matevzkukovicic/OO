@@ -1,0 +1,35 @@
+.form-control {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+}
+.select2-selection {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+}
+.select2-selection .span {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+}
+
+#displayPrehodnost {
+    margin-top: 3rem;
+}
+
+#displayPrehodnost p  {
+    font-weight: bold;
+    font-size: 1.9rem !important;
+    margin-top: 3rem !important;
+    border: 0.5rem solid #000000 !important;
+    box-sizing: border-box !important;
+    border-radius: 1rem !important;
+}
+#prehodNiMogoc {
+    background: #E56C58 !important;
+}
+#prehodJeMogoc {
+    background: #AFEFD8 !important;
+}
+#no_pad_right {
+    padding-left: 0 !important;
+}
+form{
+    padding-left: 0 !important;
+
+}
