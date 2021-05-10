@@ -19,6 +19,24 @@ var usersRouter = require('./app_server/routes/users');
 //kreiramo server (uporabimo zunanji modul express)
 var app = express();
 
+//helper
+var hbs = require('hbs')
+hbs.registerHelper('ifeq', function(arg1, arg2) {
+  if(arg1 === arg2)
+    return "#BCBCBC"
+  else
+    return "#FFFFFF"
+});
+hbs.registerHelper('ifin', function(arg1, arg2) {
+  console.log(arg1)
+  console.log(arg2)
+  if(arg2.includes(arg1))
+    return "prehodna_"
+  else
+    return "nePrehodna_"
+});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views')); //povemo kje so skripte z frontendom
 app.set('view engine', 'hbs');                                // povemo dauporabljamo Handlebars

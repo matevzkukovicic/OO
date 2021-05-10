@@ -251,6 +251,20 @@ var regije = {
   zasavska: new regija()
 }
 
+//region drzave
+
+//nalaganje staticnih podatkov
+const drzave= require('../models/staticData/CountriesOfEurope.json');
+
+
+const countries = async(req, res) => {
+
+    res.render('drzave', { page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex });
+
+};
+//endregion
+
 module.exports = {
-  index, loadingScreen
+    index, loadingScreen,
+    countries
 };

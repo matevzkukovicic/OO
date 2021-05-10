@@ -15,6 +15,7 @@ const ctrlMain = require('../controllers/main');
 router.get('/', ctrlMain.loadingScreen);
 router.get('/map', ctrlMain.index);
 router.get('/map/:region', ctrlMain.index);
+router.get('/drzave', ctrlMain.countries);
 
 
 module.exports = router;
