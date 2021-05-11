@@ -1,18 +1,21 @@
 <head>
 	<style>
 		.naslov{
-			margin-left:5%;
-			margin-top: 2%;
-			margin-bottom: 3%;
+            /*
 
+    margin-left:5%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+*/
 			font-family: Repro_screen;
 			font-style: normal;
 			font-weight: normal;
-			font-size: 56px;
 			line-height: 80px;
-
+            font-size:4vw;
 			color: #000000;
 		}
+
+
 		.faza{
 			height: 100px;
 			width: 100%;
@@ -40,10 +43,16 @@
         .cls-2 {
             background: #e56c58;
         }
+        @media (max-width: 990px) {
+            .naslov{font-size: 2.5rem;}
+        }
 	</style>
+
 </head>
 	<div>
-		<h1 class="naslov">PREPREČEVANJE</h1>
+        <div class="row">
+            <h1 class=" naslov col-lg-12 col-sm-5 text-center align-self-center ">PREPREČEVANJE</h1>
+        </div>
         <div class="card  h-100" style="border: solid black; border-radius: 1rem">
         <div class="card-body">
 <h6 class="simptomi">
