@@ -17,6 +17,11 @@ router.get('/map', ctrlMain.index);
 router.get('/map/:region', ctrlMain.index);
 router.get('/eu', ctrlMain.eu);
 router.get('/semafor', ctrlMain.semafor);
+router.get('/statistika', ctrlMain.statistika);
+router.get('/simptomi', ctrlMain.simptomi);
+router.get('/zdravljenje', ctrlMain.zdravljenje);
+router.get('/preprecevanje', ctrlMain.preprecevanje);
+router.get('/novice', ctrlMain.novice);
 
 
 module.exports = router;

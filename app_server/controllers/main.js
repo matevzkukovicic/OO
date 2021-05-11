@@ -10,10 +10,6 @@ const loadingScreen = (req, res) => {
   res.render('loadingScreen', {layout: false});
 };
 
-const semafor = (req, res) => {
-    res.render('semafor')
-}
-
 const index = async(req, res) => {
     let fs = require('fs');
     getRegijeDataNew()
@@ -451,6 +447,46 @@ const eu = async(req, res) => {
 };
 //endregion
 
+
+const statistika = async(req, res) => {
+    const resp = await axios.get('stats');
+    let numOfData = Object.keys(resp.data).length;
+    let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
+      
+    let covidStats = resp.data[resp.data.length-2];
+
+    console.log("STATS: ", covidStats);
+    res.render('statistika', {statistics:{  
+            yesterdayTests:covidStats.performedTests, 
+            yesterdayPositiveTests:covidStats.positiveTests,
+            overallTests:covidStats.performedTestsToDate, 
+            overallPositive:covidStats.positiveTestsToDate,
+            activeCases:covidStats.cases.active,
+            inHospital:covidStats.statePerTreatment.inHospital,
+            ICU:covidStats.statePerTreatment.inICU,
+            deceased:covidStats.statePerTreatment.deceased,
+        }});
+};
+
+const simptomi = (req, res) => {
+    res.render('simptomi');
+};
+
+const zdravljenje = (req, res) => {
+    res.render('zdravljenje');
+};
+
+const semafor = (req, res) => {
+    res.render('semafor')
+};
+
+const preprecevanje = (req, res) => {
+    res.render('preprecevanje')
+};
+
+const novice = (req, res) => {
+    res.render('novice')
+};
 module.exports = {
-  index, loadingScreen, semafor, eu
+  index, loadingScreen, semafor, eu, statistika, simptomi, zdravljenje, preprecevanje, novice
 };
