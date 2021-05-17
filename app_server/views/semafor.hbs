@@ -1,26 +1,51 @@
 <head>
 	<style>
 		.naslov{
-			margin-left:5%;
-			margin-top: 2%;
-			margin-bottom: 3%;
-
+            margin:5vh 5vw 10vh 5vw;
 			font-family: Repro_screen;
 			font-style: normal;
 			font-weight: normal;
 			font-size: 56px;
 			line-height: 80px;
-
 			color: #000000;
+            display: flex;
 		}
+        .naslovMobile{
+        margin:5vh 3vw 0vh 9vw;
+        font-family: Repro_screen;font-style: normal;font-weight: normal;
+            font-size:24px;line-height: 34px;color: #000000;display: flex;
+        }
 		.faza{
-			height: 100px;
-			width: 100%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+			height: 120px;
+			width: 90vw;
 			border: 2px solid black;
 			border-radius: 1rem;
 			display: flex;
 			flex-wrap: wrap;
 		}
+        .fazaMobile{
+            margin-left: 5vw;
+            margin-right: 5vw;
+            height: 16vh;
+            width: 90vw;
+            border: 2px solid black;
+            border-radius: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .fazaMobileText{
+            color:black;
+            font-size: 38px;
+            margin-top:6vh;
+            font-family: Repro_screen;
+            margin-left: 20px
+        }
+        .fazaText{
+            color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen;
+            margin-left: 20px
+        }
         .cls-1 {
             background: #7b7c7e;
         }
@@ -41,64 +66,62 @@
             background: #e56c58;
         }
 	</style>
+    <script>
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </head>
-	<div>
-		<h1 class="naslov">SEMAFOR</h1>
+	<div class="modal-header" style="border-bottom: none; padding:0px">
+		<h5 class="naslov">SEMAFOR</h5>
+        <a href="/map" style="margin:5vh 5vw 0px 5vw">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    style="padding:0px">
+                <span aria-hidden="true" style="font-size: 50px; padding:0px">&times;</span>
+            </button>
+        </a>
 	</div>
 	<div>
-		<div class="faza" style="background-color: #7B7C7E" type="button" data-toggle="modal" data-target="#crnaModal" id="openModalCrna">
-			<div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen;
-			 margin-left: 20px">
-			Črna
+
+		<a class="faza" id="crna" href="/semafor/crna" style="text-decoration: none; background-color: #7B7C7E">
+			<div class="fazaText" id="crnatext">
+                <b>Črna</b>
 			</div>
-		</div>
-		<div class="faza" style="background-color: #E66C58; margin-top: 14px"  type="button" data-toggle="modal" data-target="#rdecaModal" id="openModalRdeca">
-		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
-			Rdeča
+		</a>
+		<a class="faza" id="rdeca" style="background-color: #E66C58; margin-top: 12px;text-decoration: none"
+           href="/semafor/rdeca">
+		  <div class="fazaText" id="rdecatext">
+              <b>Rdeča</b>
 		  </div>
-		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FDBB65" type="button" data-toggle="modal" data-target="#oranznaModal" id="openModalOranzna">
-		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
-			Oranžna
+		</a>
+		<a class="faza" id="oranzna" style="margin-top: 12px; background-color: #FDBB65;text-decoration: none"
+             href="/semafor/oranzna">
+            <div class="fazaText" id="oranznatext">
+              <b>Oranžna</b>
 		  </div>
-		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #FFF3AE;" type="button" data-toggle="modal" data-target="#rumenaModal" id="openModalRumena">
-		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
-			Rumena
+		</a>
+		<a class="faza" id="rumena" style="margin-top: 12px; background-color: #FFF3AE;text-decoration: none"
+             href="/semafor/rumena">
+            <div class="fazaText" id="rumenatext">
+              <b>Rumena</b>
 		  </div>
-		</div>
-		<div class="faza" style="margin-top: 14px; background-color: #AFEFD8;" type="button" data-toggle="modal" data-target="#zelenaModal" id="openModalZelena">
-		  <div style = "color:black; font-size: 40px; margin-top:35px; font-family: Repro_screen; margin-left: 20px">
-			Zelena
+		</a>
+		<a class="faza" id="zelena" style="margin-top: 12px; background-color: #AFEFD8;text-decoration: none"
+             href="/semafor/zelena">
+            <div class="fazaText" id="zelenatext">
+              <b>Zelena</b>
 		  </div>
-		</div>
+		</a>
 	</div>
-</div>
-<!-- Crna -->
-<div class="modal fade" id="crnaModal" tabindex="-1" aria-labelledby="crnaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header cls-1">
-        <h5 class="modal-title" id="crnaModalLabel" style="font-size: 32px">Črna faza</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="font-size: 25px">
-          <p><b>Črna faza</b> je v uporabi, ko je v državi sedemdnevno povprečje števila okuženih nad 1350 in
-            število hospitaliziranih bolnikov s covid-19 nad 1200. V črni fazi velja:</p>
-            <ul>
-                <li>omejitev gibanja v nočnem času,</li>
-                <li>omejeno je delovanje javnega potniškega prometa,</li>
-                <li>obratujejo le nujne trgovine, lekarne, pošte, banke,</li>
-                <li>odprti so vrtci in šole za učence prve triade, za ostale poteka izobraževanje na daljavo,</li>
-                <li>izvajajo se lahko nujne laboratorijske vaje za študente,</li>
-                <li>treningi in tekmovanja le za vrhunske športnike oz. člane državnih reprezentanc,</li>
-                <li>dovoljena je brezkontaktna športna aktivnost na prostem in individualna vadba ter vadba družin.</li>
-            </ul>
-      </div>
-    </div>
-  </div>
 </div>
 <!-- Rdeca -->
 <div class="modal fade" id="rdecaModal" tabindex="-1" aria-labelledby="rdecaModalLabel" aria-hidden="true">
@@ -190,3 +213,18 @@
     </div>
   </div>
 </div>
+<script>
+    if(window.innerWidth<576){
+        document.getElementsByTagName("h5")[0].setAttribute("class", "naslovMobile")
+        document.getElementById("crna").setAttribute("class", "fazaMobile")
+        document.getElementById("crnatext").setAttribute("class", "fazaMobileText")
+        document.getElementById("rdeca").setAttribute("class", "fazaMobile")
+        document.getElementById("rdecatext").setAttribute("class", "fazaMobileText")
+        document.getElementById("oranzna").setAttribute("class", "fazaMobile")
+        document.getElementById("oranznatext").setAttribute("class", "fazaMobileText")
+        document.getElementById("rumena").setAttribute("class", "fazaMobile")
+        document.getElementById("rumenatext").setAttribute("class", "fazaMobileText")
+        document.getElementById("zelena").setAttribute("class", "fazaMobile")
+        document.getElementById("zelenatext").setAttribute("class", "fazaMobileText")
+    }
+</script>

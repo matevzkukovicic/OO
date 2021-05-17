@@ -477,7 +477,7 @@ const zdravljenje = (req, res) => {
 };
 
 const semafor = (req, res) => {
-    res.render('semafor')
+    res.render('semafor', {layout: false})
 };
 
 const preprecevanje = (req, res) => {
@@ -487,6 +487,28 @@ const preprecevanje = (req, res) => {
 const novice = (req, res) => {
     res.render('novice')
 };
+
+const crna = (req, res) => {
+    res.render('crna', {layout: false})
+}
+
+const rdeca = (req, res) => {
+    res.render('rdeca', {layout: false})
+}
+
+const oranzna = (req, res) => {
+    res.render('oranzna', {layout: false})
+}
+
+const rumena = (req, res) => {
+    res.render('rumena', {layout: false})
+}
+
+const zelena = (req, res) => {
+    res.render('zelena', {layout: false})
+}
+
 module.exports = {
-  index, loadingScreen, semafor, eu, statistika, simptomi, zdravljenje, preprecevanje, novice
+  index, loadingScreen, semafor, eu, statistika, simptomi, zdravljenje, preprecevanje, novice,
+    crna, rdeca, oranzna, rumena, zelena
 };

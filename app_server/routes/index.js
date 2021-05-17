@@ -22,6 +22,11 @@ router.get('/simptomi', ctrlMain.simptomi);
 router.get('/zdravljenje', ctrlMain.zdravljenje);
 router.get('/preprecevanje', ctrlMain.preprecevanje);
 router.get('/novice', ctrlMain.novice);
+router.get('/semafor/crna', ctrlMain.crna)
+router.get('/semafor/rdeca', ctrlMain.rdeca)
+router.get('/semafor/oranzna', ctrlMain.oranzna)
+router.get('/semafor/rumena', ctrlMain.rumena)
+router.get('/semafor/zelena', ctrlMain.zelena)
 
 
 module.exports = router;
