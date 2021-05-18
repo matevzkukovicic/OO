@@ -22,9 +22,8 @@
 
 </head>
 <body style="background-color: #f4f4f4;">
-    <nav class="navbar navbar-expand navbar-lights" style="background-color: #f4f4f4;">
+    <nav class="navbar navbar-expand navbar-lights" style="background-color: #f4f4f4; padding: 0.5vh 1vw">
         <div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2">
-
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <div class="btn-group" id="sloEuBtns" style="border: 2px solid #000000;
@@ -32,19 +31,19 @@
                     border-radius: 8px;">
                         {{#if sloSelected}}
                         <a href="/map"><button id="sloBtn" class="btn"
-                                style="font-weight: bold; background-color: #AFEFD8;">SLO</button></a>
-                        <a href="/eu"><button id="euBtn" class="btn " style="font-weight: bold;">SVET</button></a>
+                                style="font-weight: bold; background-color: #AFEFD8; padding:6px">SLO</button></a>
+                        <a href="/eu"><button id="euBtn" class="btn " style="font-weight: bold;padding:6px">SVET</button></a>
                         {{else}}
-                        <a href="/map"><button id="sloBtn" class="btn " style="font-weight: bold;">SLO</button></a>
+                        <a href="/map"><button id="sloBtn" class="btn " style="font-weight: bold;padding:6px">SLO</button></a>
                         <a href="/eu"><button id="euBtn" class="btn active"
-                                style="font-weight: bold; background-color: #AFEFD8;">SVET</button></a>
+                                style="font-weight: bold; background-color: #AFEFD8;padding:6px">SVET</button></a>
                         {{/if}}
                     </div>
                 </li>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-center">
-            <svg width="127" height="69" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="6.5vmax" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <a href="/map">
                     <path
                         d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z"
