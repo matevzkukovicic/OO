@@ -7,25 +7,31 @@
 
 
 <div class="" >
+    <div  class ="row justify-content-center marBot">
+        <div class = "col-4 img-responsive ">
+            <img src="../images/Bubble.png" class =""   alt="kam pa(n)danes?" style="max-width: 13vw">
+        </div>
+    </div>
+
     <div  class ="row">
-        <div class = "d-flex justify-content-center align-self-center col-lg-5 col-md-12">
-            <div class="justify-content-center col-md-4 col-sm-5 col-lg-8 btn-group align-self-center text-center form-control">
+        <div class = " d-flex justify-content-center align-self-center col-lg-5 col-md-12">
+            <div class="bordered justify-content-center col-md-4 col-sm-5 col-lg-8 btn-group align-self-center text-center form-control">
                 <p id = "sloNapis" class = "text-center " ><b>SLOVENIJA</b></p>
             </div>
         </div>
 
         <div class = "d-flex justify-content-center col-sm-12 col-md-12 col-lg-2 ">
             <picture class =" col-lg-12 col-md-2 col-sm-2 img-responsive text-center  align-self-center">
-                <source media="(min-width: 993px)" srcset="../images/arrow-right.png">
-                <source media="(min-width: 480px)" srcset="../images/arrow-down.png">
-                <img src="../images/arrow-down.png" class =" col-12 img-responsive"    style="max-width: 50vw">
+                <source media="(min-width: 993px)" srcset="../images/arrow-left.png">
+                <source media="(min-width: 480px)" srcset="../images/arrow-up.png">
+                <img src="../images/arrow-up.png" class =" col-12 img-responsive"    style="max-width: 50vw">
             </picture>
         </div>
-        <div class = "d-flex justify-content-center align-self-center col-lg-5 col-md-12">
-            <div class="justify-content-center col-lg-12 col-md-6  align-self-center text-center ">
-                <div class = "col-lg-12">
-                <form class=" col-lg-12">
-                    <select id="selectDrzavaID" class="form-control select2" onchange="onC([{{prehodneDrzave}}],[{{polprehodneDrzave}}])">
+        <div class = " d-flex justify-content-center align-self-center col-lg-5 col-md-12">
+            <div class=" justify-content-center col-lg-12 col-md-6  align-self-center text-center ">
+                <div class = " col-lg-12">
+                <form class="  col-lg-12 nopad">
+                    <select id="selectDrzavaID" class="form-control select2 " onchange="onC([{{prehodneDrzave}}],[{{polprehodneDrzave}}])">
                         {{#each drzave as |drzava|}}
                             <option id="drzava_{{@index}}">{{drzava}}</option>
                         {{/each}}
@@ -37,27 +43,15 @@
                 </div>
             </div>
         </div>
-
-
-        <!--
-        <div class="col-md-6 col-lg-5 col-sm-4 row align-self-center text-center d-flex justify-content-center ">
-            <div id="no_pad_right" class=" col-lg-12 col-md-12 col-sm-6">
-                    <form class="">
-                        <select id="selectDrzavaID" class="form-control select2" onchange="onC([{{prehodneDrzave}}])">
-                            {{#each drzave as |drzava|}}
-                                <option id="drzava_{{@index}}">{{drzava}}</option>
-                            {{/each}}
-                        </select>
-                    </form>
-                <script>
-                    $('.select2').select2();
-                </script>
-            </div>
-        </div>
-        -->
     </div>
     <div  class = "row">
         <div id="displayPrehodnost" class = "col-12 align-self-center text-center">
+            <a href='https://www.gov.si/teme/koronavirus-sars-cov-2/prehajanje-meja/' id="prehodDelnoMogoc" class="btn btn-light col-4 ">Prehod delno mogoč!</a>
+        </div>
+    </div>
+    <div  class = "row">
+        <div id="displayPrehodnostDetail" class = "col-12 align-self-center text-center">
+            <p>Za vstop v Slovenijo iz te države ni omejitev! <br> <b>Srečno pot!</b></p>
         </div>
     </div>
 </div>
