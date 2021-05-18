@@ -517,7 +517,7 @@ const novice = (req, res) => {
         }
         xmlhttp.open("GET", url, false)
         xmlhttp.send()
-    res.render('novice', {noviceText: noviceText})
+    res.render('novice', {noviceText: noviceText, layout: false})
 };
 
 const crna = (req, res) => {
