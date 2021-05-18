@@ -13,7 +13,7 @@ const loadingScreen = (req, res) => {
 const index = async(req, res) => {
     let fs = require('fs');
     getRegijeDataNew()
-    res.render('home', { title: 'PandaMia', regions:regije});
+    res.render('home', { sloSelected:true, title: 'PandaMia', regions:regije});
     /*
     let selectedRegion = req.params.region; 
     if(selectedRegion && selectedRegion !== "favicon.ico") {
@@ -456,7 +456,7 @@ const drzave= require('../models/staticData/CountriesOfEurope.json');
 
 
 const eu = async(req, res) => {
-    res.render('drzave', { page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex,polprehodneDrzave: drzave.polprehodneIndex });
+    res.render('drzave', { euSelected: true, page: "Prehodi",title: 'Prehodi',drzave: drzave.Drzave, prehodneDrzave: drzave.prehodneIndex,polprehodneDrzave: drzave.polprehodneIndex });
 
 };
 //endregion

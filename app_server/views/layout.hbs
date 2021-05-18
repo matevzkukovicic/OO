@@ -2,81 +2,94 @@
 <html lang="sl">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{{title}}</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-		  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-			integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
 </head>
-<body>
-  <nav class="navbar navbar-expand navbar-light bg-light py-md-3">
-    <div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2">
+<body style="background-color: #f4f4f4;">
+    <nav class="navbar navbar-expand navbar-lights" style="background-color: #f4f4f4;">
+        <div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2">
 
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <div class="btn-toolbar" aria-label="Basic example">
-            <a href="/map"><button type="button" class="btn btn-secondary mr-1">SLO</button></a>
-            <a href="/eu"><button type="button" class="btn btn-secondary">EU</button></a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <ul class="nav navbar-nav navbar-center">
-      <svg width="127" height="69" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <a href="/map">
-        <path
-          d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z"
-          fill="black" />
-        <path
-          d="M120.015 49.0118C134.297 32.1348 121.146 9.48032 103.661 2.2897C87.768 -4.24655 72.3758 12.4368 71.6331 29.6058C70.238 61.8543 109.9 60.965 120.015 49.0118Z"
-          fill="black" />
-        <path
-          d="M6.84394 49.0118C-7.43781 32.1348 5.71328 9.48032 23.1979 2.2897C39.0914 -4.24655 54.4836 12.4368 55.2263 29.6058C56.6214 61.8543 16.9591 60.965 6.84394 49.0118Z"
-          fill="black" />
-        <circle class="eyeball" cx="89.8931" cy="30.6903" r="10.6236" fill="white" />
-        <circle class="eyeball" r="10.6236" transform="matrix(-1 0 0 1 36.9663 30.6903)" fill="white" />
-        <ellipse class="pupil" rx="6.19708" ry="6.49218" transform="matrix(-1 0 0 1 86.6472 34.8217)" fill="black" />
-        <ellipse class="pupil" cx="40.2122" cy="34.8217" rx="6.19708" ry="6.49218" fill="black" />
-        </a>
-      </svg>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <div class="btn-group" id="sloEuBtns" style="border: 2px solid #000000;
+                    box-sizing: border-box;
+                    border-radius: 8px;">
+                        {{#if sloSelected}}
+                        <a href="/map"><button id="sloBtn" class="btn"
+                                style="font-weight: bold; background-color: #AFEFD8;">SLO</button></a>
+                        <a href="/eu"><button id="euBtn" class="btn " style="font-weight: bold;">SVET</button></a>
+                        {{else}}
+                        <a href="/map"><button id="sloBtn" class="btn " style="font-weight: bold;">SLO</button></a>
+                        <a href="/eu"><button id="euBtn" class="btn active"
+                                style="font-weight: bold; background-color: #AFEFD8;">SVET</button></a>
+                        {{/if}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-center">
+            <svg width="127" height="69" viewBox="0 0 127 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="/map">
+                    <path
+                        d="M78.85 54.931C80.9157 56.9009 80.9097 61.8618 78.85 63.6882C76.7308 65.5674 71.1259 69 65.1644 69C59.203 69 52.819 65.5674 50.6452 63.6882C48.5327 61.8618 48.8746 56.7706 51.2353 54.931C54.7667 52.1793 61.3876 54.9311 65.1644 54.9311C68.9412 54.931 75.9646 52.1793 78.85 54.931Z"
+                        fill="black" />
+                    <path
+                        d="M120.015 49.0118C134.297 32.1348 121.146 9.48032 103.661 2.2897C87.768 -4.24655 72.3758 12.4368 71.6331 29.6058C70.238 61.8543 109.9 60.965 120.015 49.0118Z"
+                        fill="black" />
+                    <path
+                        d="M6.84394 49.0118C-7.43781 32.1348 5.71328 9.48032 23.1979 2.2897C39.0914 -4.24655 54.4836 12.4368 55.2263 29.6058C56.6214 61.8543 16.9591 60.965 6.84394 49.0118Z"
+                        fill="black" />
+                    <circle class="eyeball" cx="89.8931" cy="30.6903" r="10.6236" fill="white" />
+                    <circle class="eyeball" r="10.6236" transform="matrix(-1 0 0 1 36.9663 30.6903)" fill="white" />
+                    <ellipse class="pupil" rx="6.19708" ry="6.49218" transform="matrix(-1 0 0 1 86.6472 34.8217)"
+                        fill="black" />
+                    <ellipse class="pupil" cx="40.2122" cy="34.8217" rx="6.19708" ry="6.49218" fill="black" />
+                </a>
+            </svg>
 
-    </ul>
+        </ul>
 
-    <div class="navbar-collapse collapse order-2 dual-collapse2">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <div class="btn-group dropleft">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Menu
-            </button>
-            <div class="dropdown-menu">    
-                <a class="dropdown-item" href="/semafor">Semafor</a>
-                <a class="dropdown-item" href="/statistika">Statistika</a>
-                <h6 class="dropdown-header">Bolezen</h6>
-                <a class="dropdown-item" href="/simptomi">&#8658; Simptomi</a>
-                <a class="dropdown-item" href="/preprecevanje">&#8658; Preprečevanje</a>
-                <a class="dropdown-item" href="/zdravljenje">&#8658; Zdravljenje</a>
-                <a class="dropdown-item" href="/novice">Novice</a>
-            </div>
-            </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        <div class="navbar-collapse collapse order-2 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="btn-group dropleft">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/semafor">Semafor</a>
+                            <a class="dropdown-item" href="/statistika">Statistika</a>
+                            <h6 class="dropdown-header">Bolezen</h6>
+                            <a class="dropdown-item" href="/simptomi">&#8658; Simptomi</a>
+                            <a class="dropdown-item" href="/preprecevanje">&#8658; Preprečevanje</a>
+                            <a class="dropdown-item" href="/zdravljenje">&#8658; Zdravljenje</a>
+                            <a class="dropdown-item" href="/novice">Novice</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  <main>
-    <div class="container-fluid mt-4 content">
+    <main>
+        <div class="container-fluid mt-4 content">
 
-      {{{body}}}
-    </div>
-  </main>
+            {{{body}}}
+        </div>
+    </main>
 </body>
-
 </html>
