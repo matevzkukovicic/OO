@@ -1,57 +1,101 @@
 <head>
-	<style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <style>
+        .modal-header{
+            height:30%;
+            background: #f4f4f4;
+            padding: 0px;
+            border-bottom: none;
+        }
 		.naslov{
-
-			font-family: Repro_screen;
+			margin-left:5%;
+			margin-top: 2%;
+			margin-bottom: 3%;
+			font-family: Repro_bold;
 			font-style: normal;
 			font-weight: normal;
+			font-size: 56px;
 			line-height: 80px;
-            font-size:4vw;
+
 			color: #000000;
 		}
 		.faza{
-			height: 100px;
-			width: 100%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+			height: 120px;
+			width: 90vw;
 			border: 2px solid black;
 			border-radius: 1rem;
 			display: flex;
 			flex-wrap: wrap;
+			color: black;
+			font-family: Repro_screen;
 		}
-        .cls-1 {
-            background: #7b7c7e;
-        }
-
-        .cls-4 {
-            background: #fff3ae;
-        }
-
-        .cls-3 {
-            background: #fcbb65;
-        }
-
-        .cls-5 {
-            background: #afefd8;
-        }
-
-        .cls-2 {
-            background: #e56c58;
-        }
-        @media (max-width: 990px) {
-            .naslov{font-size: 2.5rem;}
-        }
-	</style>
+		@media (max-width: 990px) {
+      .naslov{font-size: 2.5rem;}
+  }
+    </style>
 </head>
-	<div>
-        <div class="row">
-            <h1 class=" naslov col-lg-12 col-sm-5 text-center align-self-center ">ZDRAVLJENJE</h1>
-        </div>
-        <div class="card  h-100" style="border: solid black; border-radius: 1rem">
-        <div class="card-body">
-<h6 class="simptomi">
-V Sloveniji imamo nacionalne smernice klinične obravnave bolnikov z COVID-19, ki narekujejo, da je zdravljenje simptomatsko. To pomeni, da blažimo prisotne simptome in znake bolezni. V primeru najtežjih in življenje ogrožajočih stanj pa imamo v Sloveniji na voljo vse ukrepe, ki so trenutno priporočeni v svetu.</h6>
-<h6>
-    Zaenkrat učinkovitega zdravila za zdravljenje okužbe z novim koronavirusom, ni. V primeru okužbe se zdravi oz. blaži simptome in nudi podporo obolelim organskih sistemom.
-</h6>
-        </div>
-        </div>
-	</div>
+<div>
+    <div class="modal-header">
+        <h5 style="font-family:Repro_screen;
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 80px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin:5vh 5vw 0px 5vw"
+        >Zdravljenje</h5>
+        <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
+                <span aria-hidden="true" style="font-size: 50px">&times;</span>
+            </button>
+        </a>
+    </div>
+    <div class="modal-body" id="text" style="font-family: Repro_screen;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 54px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin:3% 5% 0% 5%;
+        ">
+		<div>
+			<p class="simptomi">
+			V Sloveniji imamo nacionalne smernice klinične obravnave bolnikov z COVID-19, ki narekujejo, da je zdravljenje simptomatsko.
+				To pomeni, da blažimo prisotne simptome in znake bolezni. V primeru najtežjih in življenje ogrožajočih stanj pa imamo
+				v Sloveniji na voljo vse ukrepe, ki so trenutno priporočeni v svetu.</p>
+			<p>
+			    Zaenkrat učinkovitega zdravila za zdravljenje okužbe z novim koronavirusom,
+				ni. V primeru okužbe se zdravi oz. blaži simptome in nudi podporo obolelim organskih sistemom.
+			</p>
+		</div>
+    </div>
+</div>
+<script>
+	document.getElementsByTagName("body")[0].setAttribute("style", "background-color: #f4f4f4; padding: 0px")
+    if(window.innerWidth<576){
+        document.getElementsByTagName("body")[0].setAttribute("style", "background: #f4f4f4; padding:0%")
+        document.getElementsByTagName("h5")[0].setAttribute("style", "font-family:Repro_screen;" +
+                "font-size: 38px;font-style: normal;font-weight: 700; line-height: 54,49px;" +
+                "letter-spacing: 0em;text-align: left;margin:2vh 3vw 25vh 5.5vw")
+        document.getElementById("text").setAttribute("style", "font-family: Repro_screen;font-size: 18px;" +
+                "font-style: normal;font-weight: 400;line-height: 26px;letter-spacing: 0em;" +
+                "text-align: left;margin:3% 5% 0% 5%;")
+        document.getElementById("iks").setAttribute("style", "margin:5vh 6vw 25vh 5vw")
+    }
+</script>
