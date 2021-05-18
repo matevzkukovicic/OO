@@ -478,15 +478,15 @@ const statistika = async(req, res) => {
             inHospital:covidStats.statePerTreatment.inHospital,
             ICU:covidStats.statePerTreatment.inICU,
             deceased:covidStats.statePerTreatment.deceased,
-        }});
+        }, layout: false});
 };
 
 const simptomi = (req, res) => {
-    res.render('simptomi');
+    res.render('simptomi', {layout: false});
 };
 
 const zdravljenje = (req, res) => {
-    res.render('zdravljenje');
+    res.render('zdravljenje', {layout: false});
 };
 
 const semafor = (req, res) => {
@@ -494,7 +494,7 @@ const semafor = (req, res) => {
 };
 
 const preprecevanje = (req, res) => {
-    res.render('preprecevanje')
+    res.render('preprecevanje', {layout: false})
 };
 
 const novice = (req, res) => {
