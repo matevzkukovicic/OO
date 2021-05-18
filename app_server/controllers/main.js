@@ -432,6 +432,20 @@ var regije = {
   savinjska: new regija(),
   zasavska: new regija()
 }
+var noviceText = [{
+    datum: "",
+    href: "",
+    naslov: ""
+    },
+    {
+    datum: "",
+    href: "",
+    naslov: ""
+    },{
+    datum: "",
+    href: "",
+    naslov: ""
+    }]
 
 
 
@@ -454,7 +468,6 @@ const statistika = async(req, res) => {
     let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
       
     let covidStats = resp.data[resp.data.length-2];
-
     console.log("STATS: ", covidStats);
     res.render('statistika', {statistics:{  
             yesterdayTests:covidStats.performedTests, 
@@ -485,7 +498,26 @@ const preprecevanje = (req, res) => {
 };
 
 const novice = (req, res) => {
-    res.render('novice')
+    var url = "https://www.gov.si/teme/koronavirus-sars-cov-2/"
+        var xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                const arr = new jsdom.JSDOM(this.responseText)
+                console.log(arr.window.document.querySelectorAll("ul").item(5).children[1].children[1].children[0].href)
+                noviceText[0].datum=arr.window.document.querySelectorAll("ul").item(5).children[0].children[0].children[0].innerHTML
+                noviceText[0].naslov=arr.window.document.querySelectorAll("ul").item(5).children[0].children[1].children[0].innerHTML
+                noviceText[0].href=arr.window.document.querySelectorAll("ul").item(5).children[0].children[1].children[0].href
+                noviceText[1].datum=arr.window.document.querySelectorAll("ul").item(5).children[1].children[0].children[0].innerHTML
+                noviceText[1].naslov=arr.window.document.querySelectorAll("ul").item(5).children[1].children[1].children[0].innerHTML
+                noviceText[1].href=arr.window.document.querySelectorAll("ul").item(5).children[1].children[1].children[0].href
+                noviceText[2].datum=arr.window.document.querySelectorAll("ul").item(5).children[2].children[0].children[0].innerHTML
+                noviceText[2].naslov=arr.window.document.querySelectorAll("ul").item(5).children[2].children[1].children[0].innerHTML
+                noviceText[2].href=arr.window.document.querySelectorAll("ul").item(5).children[2].children[1].children[0].href
+            }
+        }
+        xmlhttp.open("GET", url, false)
+        xmlhttp.send()
+    res.render('novice', {noviceText: noviceText})
 };
 
 const crna = (req, res) => {

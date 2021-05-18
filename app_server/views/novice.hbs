@@ -14,12 +14,15 @@
 			color: #000000;
 		}
 		.faza{
-			height: 100px;
-			width: 100%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+			height: 120px;
+			width: 90vw;
 			border: 2px solid black;
 			border-radius: 1rem;
 			display: flex;
 			flex-wrap: wrap;
+			color: black;
 		}
         .cls-1 {
             background: #7b7c7e;
@@ -44,4 +47,12 @@
 </head>
 	<div>
 		<h1 class="naslov">NOVICE</h1>
+	</div>
+	<div>
+		{{#noviceText}}
+		<a class="faza" href="{{href}}" style="text-decoration: none; margin:2%">
+			<h5 style="font-size: 12px; margin:2%">{{datum}}</h5>
+			<h1 style="font-size: 30px; margin:0% 2% 2% 2%">{{naslov}}</h1>
+		</a>
+		{{/noviceText}}
 	</div>
