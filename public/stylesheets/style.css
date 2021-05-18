@@ -1,17 +1,21 @@
 body {
   padding: 50px;
-  font-family: "Repro_screen", serif !important;
   background-color: "#E5E5E5";
 }
 
 @font-face {
   font-family: Repro_screen;
-  src: url("./fonts/ABC_Repro/ABCRepro-Screen-Trial.woff");
+  src: url("/fonts/ABC_Repro/ABCRepro-Screen-Trial.woff2");
 }
 
 @font-face {
   font-family: Repro_bold;
-  src: url("./fonts/ABC_Repro/ABCRepro-Bold-Trial.otf");
+  src: url("./fonts/ABC_Repro/ABCRepro-Bold-Trial.woff2");
+}
+
+@font-face {
+  font-family: Repro_regular;
+  src: url("/assets/fonts/ABC_Repro/ABCRepro-Regular-Trial.woff2");
 }
 
 @media (min-width: 768px) {
@@ -21,10 +25,6 @@ body {
     left: 0;
     text-align: center;
   }
-}
-.btn-toolbar {
-  border: 2px solid #000000;
-  border-radius: 8px;
 }
 .navbar {
   background-image: none;
@@ -59,10 +59,6 @@ body {
   top: 0;
   left: 0;
   max-height: 100%;
-}
-.active {
-  background-color: green !important;
-  fill: green;
 }
 .eye {
   background: #ccc;

@@ -116,10 +116,14 @@
         <!-- MAP END -->
 
     </div>
-    <div class="card col-xl-4 h-100" style="border: solid black; border-radius: 1rem">
+    <div class="card col-xl-4 h-100" style="
+    border: 3px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;">
         <div class="card-body">
-            <h4 style="font-family: Repro_bold" id="card_header">Klikni na regijo!</h4>
-            <h4 style="font-family: Repro_screen; font-size: 16px">
+            <h1 class="text-center" style="font-family: Repro_regular;" id="card_header">Klikni na
+                regijo!</h1>
+            <h4 style="font-family: Repro_bold; font-size: 16px">
                 <p id="odprtost_sol"></p>
                 <p id="gibanje"></p>
                 <p id="zbiranje"></p>
@@ -128,18 +132,6 @@
         </div>
     </div>
 </div>
-<footer class="text-center text-white fixed-bottom">
-
-    <!-- Copyright -->
-    <div class="container" style="color: black; font-size: 9pt; margin-bottom: 3pt;">
-        <span style="text-align: right; color: black;">Podatki o okužbah so bili pridobljeni preko <a
-                href="https://covid-19.sledilnik.org/sl/data">Sledilnik
-                API-ja</a>
-        </span>
-
-    </div>
-    <!-- Copyright -->
-</footer>
 <script>
     let jvzslo = document.getElementById("jugovzhodna_slovenija")
     if ("{{regions.jugovzhodna.skupina}}" == "1 - črna") {
