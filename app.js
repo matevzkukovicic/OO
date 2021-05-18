@@ -1,6 +1,8 @@
 //tle sprogramiramo dejanski server v JS, ki ga bomo nato zagnali (za to rabmo node)
 //ubistvu je vse za to ze pripravljeno v modulu ("knjiznici") express
 
+require('dotenv').config();
+
 //nalozimo module ("knjiznice"), ki jih nasa aplikacija uporablja
   //zunanji moduli
 var createError = require('http-errors');
