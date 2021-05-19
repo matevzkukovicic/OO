@@ -469,7 +469,7 @@ const statistika = async(req, res) => {
       
     let covidStats = resp.data[resp.data.length-2];
     console.log("STATS: ", covidStats);
-    res.render('statistika', {statistics:{  
+    res.render('menu_pages/statistika', {statistics:{  
             yesterdayTests:covidStats.performedTests, 
             yesterdayPositiveTests:covidStats.positiveTests,
             overallTests:covidStats.performedTestsToDate, 
@@ -482,19 +482,19 @@ const statistika = async(req, res) => {
 };
 
 const simptomi = (req, res) => {
-    res.render('simptomi', {layout: false});
+    res.render('menu_pages/simptomi', {layout: false});
 };
 
 const zdravljenje = (req, res) => {
-    res.render('zdravljenje', {layout: false});
+    res.render('menu_pages/zdravljenje', {layout: false});
 };
 
 const semafor = (req, res) => {
-    res.render('semafor', {layout: false})
+    res.render('menu_pages/semafor', {layout: false})
 };
 
 const preprecevanje = (req, res) => {
-    res.render('preprecevanje', {layout: false})
+    res.render('menu_pages/preprecevanje', {layout: false})
 };
 
 const novice = (req, res) => {
@@ -517,27 +517,27 @@ const novice = (req, res) => {
         }
         xmlhttp.open("GET", url, false)
         xmlhttp.send()
-    res.render('novice', {noviceText: noviceText, layout: false})
+    res.render('menu_pages/novice', {noviceText: noviceText, layout: false})
 };
 
 const crna = (req, res) => {
-    res.render('crna', {layout: false})
+    res.render('menu_pages/semafor/crna', {layout: false})
 }
 
 const rdeca = (req, res) => {
-    res.render('rdeca', {layout: false})
+    res.render('menu_pages/semafor/rdeca', {layout: false})
 }
 
 const oranzna = (req, res) => {
-    res.render('oranzna', {layout: false})
+    res.render('menu_pages/semafor/oranzna', {layout: false})
 }
 
 const rumena = (req, res) => {
-    res.render('rumena', {layout: false})
+    res.render('menu_pages/semafor/rumena', {layout: false})
 }
 
 const zelena = (req, res) => {
-    res.render('zelena', {layout: false})
+    res.render('menu_pages/semafor/zelena', {layout: false})
 }
 
 module.exports = {
