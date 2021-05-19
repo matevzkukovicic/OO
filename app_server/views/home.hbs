@@ -23,6 +23,10 @@
                     .cls-2 {
                         fill: #e56c58;
                     }
+
+                    .cls-neutral {
+                        fill: #F4F4F4;
+                    }
                 </style>
             </defs>
             <g id="Layer_2" data-name="Layer 2">
@@ -134,208 +138,281 @@
 </div>
 <script>
     let jvzslo = document.getElementById("jugovzhodna_slovenija")
+
+    let jvColor;
     if ("{{regions.jugovzhodna.skupina}}" == "1 - črna") {
         jvzslo.classList.add("cls-1")
+        jvColor = "cls-1";
     }
     else if ("{{regions.jugovzhodna.skupina}}" == "2 - rdeča") {
         jvzslo.classList.add("cls-2")
+        jvColor = "cls-2";
     }
     else if ("{{regions.jugovzhodna.skupina}}" == "3 - oranžna") {
         jvzslo.classList.add("cls-3")
+        jvColor = "cls-3";
     }
     else if ("{{regions.jugovzhodna.skupina}}" == "4 - rumena") {
         jvzslo.classList.add("cls-4")
+        jvColor = "cls-4";
     }
     else {
         jvzslo.classList.add("cls-5")
+        jvColor = "cls-5";
     }
 
     let gorenjska = document.getElementById("gorenjska")
+    let gorenjskaColor;
     if ("{{regions.gorenjska.skupina}}" == "1 - črna") {
         gorenjska.classList.add("cls-1")
+        gorenjskaColor = "cls-1";
     }
     else if ("{{regions.gorenjska.skupina}}" == "2 - rdeča") {
         gorenjska.classList.add("cls-2")
+        gorenjskaColor = "cls-2";
     }
     else if ("{{regions.gorenjska.skupina}}" == "3 - oranžna") {
         gorenjska.classList.add("cls-3")
+        gorenjskaColor = "cls-3";
     }
     else if ("{{regions.gorenjska.skupina}}" == "4 - rumena") {
         gorenjska.classList.add("cls-4")
+        gorenjskaColor = "cls-4";
     }
     else {
         gorenjska.classList.add("cls-5")
+        gorenjskaColor = "cls-5";
     }
 
     let oslo = document.getElementById("osrednjeslovenska")
+    let osColor;
     if ("{{regions.osrednjeslovenska.skupina}}" == "1 - črna") {
         oslo.classList.add("cls-1")
+        osColor = "cls-1";
     }
     else if ("{{regions.osrednjeslovenska.skupina}}" == "2 - rdeča") {
         oslo.classList.add("cls-2")
+        osColor = "cls-2";
     }
     else if ("{{regions.osrednjeslovenska.skupina}}" == "3 - oranžna") {
         oslo.classList.add("cls-3")
+        osColor = "cls-3";
     }
     else if ("{{regions.osrednjeslovenska.skupina}}" == "4 - rumena") {
         oslo.classList.add("cls-4")
+        osColor = "cls-4";
     }
     else {
         oslo.classList.add("cls-5")
+        osColor = "cls-5";
     }
 
     let goriska = document.getElementById("goriska")
+    let goriskaColor;
     if ("{{regions.goriska.skupina}}" == "1 - črna") {
         goriska.classList.add("cls-1")
+        goriskaColor = "cls-1";
     }
     else if ("{{regions.goriska.skupina}}" == "2 - rdeča") {
         goriska.classList.add("cls-2")
+        goriskaColor = "cls-2";
     }
     else if ("{{regions.goriska.skupina}}" == "3 - oranžna") {
         goriska.classList.add("cls-3")
+        goriskaColor = "cls-3";
     }
     else if ("{{regions.goriska.skupina}}" == "4 - rumena") {
         goriska.classList.add("cls-4")
+        goriskaColor = "cls-4";
     }
     else {
         goriska.classList.add("cls-5")
+        goriskaColor = "cls-5";
     }
 
     let savinjska = document.getElementById("savinjska")
+    let savinjskaColor;
     if ("{{regions.savinjska.skupina}}" == "1 - črna") {
         savinjska.classList.add("cls-1")
+        savinjskaColor = "cls-1";
     }
     else if ("{{regions.savinjska.skupina}}" == "2 - rdeča") {
         savinjska.classList.add("cls-2")
+        savinjskaColor = "cls-2";
     }
     else if ("{{regions.savinjska.skupina}}" == "3 - oranžna") {
         savinjska.classList.add("cls-3")
+        savinjskaColor = "cls-3";
     }
     else if ("{{regions.savinjska.skupina}}" == "4 - rumena") {
         savinjska.classList.add("cls-4")
+        savinjskaColor = "cls-4";
     }
     else {
         savinjska.classList.add("cls-5")
+        savinjskaColor = "cls-5";
     }
 
     let podravska = document.getElementById("podravska")
+    let podravskaColor;
     if ("{{regions.podravska.skupina}}" == "1 - črna") {
         podravska.classList.add("cls-1")
+        podravskaColor = "cls-1";
     }
     else if ("{{regions.podravska.skupina}}" == "2 - rdeča") {
         podravska.classList.add("cls-2")
+        podravskaColor = "cls-2";
     }
     else if ("{{regions.podravska.skupina}}" == "3 - oranžna") {
         podravska.classList.add("cls-3")
+        podravskaColor = "cls-3";
     }
     else if ("{{regions.podravska.skupina}}" == "4 - rumena") {
         podravska.classList.add("cls-4")
+        podravskaColor = "cls-4";
     }
     else {
         podravska.classList.add("cls-5")
+        podravskaColor = "cls-5";
     }
 
     let primorsko_notranjska = document.getElementById("primorsko_notranjska")
+    let primorsko_notranjskaColor;
     if ("{{regions.primorsko_notranjska.skupina}}" == "1 - črna") {
         primorsko_notranjska.classList.add("cls-1")
+        primorsko_notranjskaColor = "cls-1";
     }
     else if ("{{regions.primorsko_notranjska.skupina}}" == "2 - rdeča") {
         primorsko_notranjska.classList.add("cls-2")
+        primorsko_notranjskaColor = "cls-2";
     }
     else if ("{{regions.primorsko_notranjska.skupina}}" == "3 - oranžna") {
         primorsko_notranjska.classList.add("cls-3")
+        primorsko_notranjskaColor = "cls-3";
     }
     else if ("{{regions.primorsko_notranjska.skupina}}" == "4 - rumena") {
         primorsko_notranjska.classList.add("cls-4")
+        primorsko_notranjskaColor = "cls-4";
     }
     else {
         primorsko_notranjska.classList.add("cls-5")
+        primorsko_notranjskaColor = "cls-5";
     }
 
-    let pomurska = document.getElementById("pomurska")
+    let pomurska = document.getElementById("pomurska");
+    let pomurskaColor;
     if ("{{regions.pomurska.skupina}}" == "1 - črna") {
         pomurska.classList.add("cls-1")
+        pomurskaColor = "cls-1";
     }
     else if ("{{regions.pomurska.skupina}}" == "2 - rdeča") {
         pomurska.classList.add("cls-2")
+        pomurskaColor = "cls-2";
     }
     else if ("{{regions.pomurska.skupina}}" == "3 - oranžna") {
         pomurska.classList.add("cls-3")
+        pomurskaColor = "cls-3";
     }
     else if ("{{regions.pomurska.skupina}}" == "4 - rumena") {
         pomurska.classList.add("cls-4")
+        pomurskaColor = "cls-4";
     }
     else {
         pomurska.classList.add("cls-5")
+        pomurskaColor = "cls-5";
     }
 
     let koroska = document.getElementById("koroska")
+    let koroskaColor;
     if ("{{regions.koroska.skupina}}" == "1 - črna") {
         koroska.classList.add("cls-1")
+        koroskaColor = "cls-1";
     }
     else if ("{{regions.koroska.skupina}}" == "2 - rdeča") {
         koroska.classList.add("cls-2")
+        koroskaColor = "cls-2";
     }
     else if ("{{regions.koroska.skupina}}" == "3 - oranžna") {
         koroska.classList.add("cls-3")
+        koroskaColor = "cls-3";
     }
     else if ("{{regions.koroska.skupina}}" == "4 - rumena") {
         koroska.classList.add("cls-4")
+        koroskaColor = "cls-4";
     }
     else {
         koroska.classList.add("cls-5")
+        koroskaColor = "cls-5";
     }
 
     let obalno_kraska = document.getElementById("obalno_kraska")
+    let obalno_kraskaColor;
     if ("{{regions.obalno_kraska.skupina}}" == "1 - črna") {
         obalno_kraska.classList.add("cls-1")
+        obalno_kraskaColor = "cls-1";
     }
     else if ("{{regions.obalno_kraska.skupina}}" == "2 - rdeča") {
         obalno_kraska.classList.add("cls-2")
+        obalno_kraskaColor = "cls-2";
     }
     else if ("{{regions.obalno_kraska.skupina}}" == "3 - oranžna") {
         obalno_kraska.classList.add("cls-3")
+        obalno_kraskaColor = "cls-3";
     }
     else if ("{{regions.obalno_kraska.skupina}}" == "4 - rumena") {
         obalno_kraska.classList.add("cls-4")
+        obalno_kraskaColor = "cls-4";
     }
     else {
         obalno_kraska.classList.add("cls-5")
+        obalno_kraskaColor = "cls-5";
     }
 
 
     let posavska = document.getElementById("posavska")
+    let posavskaColor;
     if ("{{regions.posavska.skupina}}" == "1 - črna") {
         posavska.classList.add("cls-1")
+        posavskaColor = "cls-1";
     }
     else if ("{{regions.posavska.skupina}}" == "2 - rdeča") {
         posavska.classList.add("cls-2")
+        posavskaColor = "cls-2";
     }
     else if ("{{regions.posavska.skupina}}" == "3 - oranžna") {
         posavska.classList.add("cls-3")
+        posavskaColor = "cls-3";
     }
     else if ("{{regions.posavska.skupina}}" == "4 - rumena") {
         posavska.classList.add("cls-4")
+        posavskaColor = "cls-4";
     }
     else {
         posavska.classList.add("cls-5")
+        posavskaColor = "cls-5";
     }
 
     let zasavska = document.getElementById("zasavska")
+    let zasavskaColor;
     if ("{{regions.zasavska.skupina}}" == "1 - črna") {
         zasavska.classList.add("cls-1")
+        zasavskaColor = "cls-1";
     }
     else if ("{{regions.zasavska.skupina}}" == "2 - rdeča") {
         zasavska.classList.add("cls-2")
+        zasavskaColor = "cls-2";
     }
     else if ("{{regions.zasavska.skupina}}" == "3 - oranžna") {
         zasavska.classList.add("cls-3")
+        zasavskaColor = "cls-3";
     }
     else if ("{{regions.zasavska.skupina}}" == "4 - rumena") {
         zasavska.classList.add("cls-4")
+        zasavskaColor = "cls-4";
     }
     else {
         zasavska.classList.add("cls-5")
+        zasavskaColor = "cls-5";
     }
 
     function setjvz() {
@@ -349,6 +426,32 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.jugovzhodna.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.jugovzhodna.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.jugovzhodna.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add(jvColor);
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
+
     }
 
     function setosv() {
@@ -362,6 +465,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.osrednjeslovenska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.osrednjeslovenska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.osrednjeslovenska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add(osColor);
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setgori() {
@@ -375,6 +503,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.goriska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.goriska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.goriska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add(goriskaColor);
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setsavi() {
@@ -388,6 +541,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.savinjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.savinjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.savinjska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add(savinjskaColor);
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setpod() {
@@ -401,6 +579,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.podravska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.podravska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.podravska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add(podravskaColor);
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setgor() {
@@ -414,6 +617,32 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.gorenjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.gorenjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.gorenjska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add(gorenjskaColor);
+
     }
 
     function setprimnot() {
@@ -427,6 +656,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.primorsko_notranjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.primorsko_notranjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.primorsko_notranjska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add(primorsko_notranjskaColor);
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setpom() {
@@ -440,6 +694,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.pomurska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.pomurska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.pomurska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add(pomurskaColor);
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setkor() {
@@ -453,6 +732,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.koroska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.koroska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.koroska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add(koroskaColor);
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setobkras() {
@@ -466,6 +770,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.obalno_kraska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.obalno_kraska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.obalno_kraska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add(obalno_kraskaColor);
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
     function setpos() {
@@ -479,6 +808,32 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.posavska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.posavska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.posavska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add("cls-neutral");
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add(posavskaColor);
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
+
     }
 
     function setzas() {
@@ -492,6 +847,31 @@
         gibanje.textContent = "Omejitve gibanja: {{regions.zasavska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.zasavska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.zasavska.strezbaHraneInPijace}}"
+
+        jvzslo.classList = '';
+        jvzslo.classList.add("cls-neutral");
+        zasavska.classList = '';
+        zasavska.classList.add(zasavskaColor);
+        obalno_kraska.classList = '';
+        obalno_kraska.classList.add("cls-neutral");
+        koroska.classList = '';
+        koroska.classList.add("cls-neutral");
+        pomurska.classList = '';
+        pomurska.classList.add("cls-neutral");
+        primorsko_notranjska.classList = '';
+        primorsko_notranjska.classList.add("cls-neutral");
+        posavska.classList = '';
+        posavska.classList.add("cls-neutral");
+        podravska.classList = '';
+        podravska.classList.add("cls-neutral");
+        savinjska.classList = '';
+        savinjska.classList.add("cls-neutral");
+        goriska.classList = '';
+        goriska.classList.add("cls-neutral");
+        oslo.classList = '';
+        oslo.classList.add("cls-neutral");
+        gorenjska.classList = '';
+        gorenjska.classList.add("cls-neutral");
     }
 
 </script>
