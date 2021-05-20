@@ -126,7 +126,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.mb.confirmedToDate - arr[i-1].regions.mb.confirmedToDate)
             }
             regije.podravska = {
-                ime:"Podravska regija",
+                ime:"Podravska",
                 skupina: getRegijaSkupina(sum/7, 324875),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -142,7 +142,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kp.confirmedToDate - arr[i-1].regions.kp.confirmedToDate)
             }
             regije.obalno_kraska = {
-                ime:"Obalno-Kraška regija",
+                ime:"Obalno-Kraška",
                 skupina: getRegijaSkupina(sum/7, 115613),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -159,7 +159,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ce.confirmedToDate - arr[i-1].regions.ce.confirmedToDate)
             }
             regije.savinjska = {
-                ime:"Savinjska regija",
+                ime:"Savinjska",
                 skupina: getRegijaSkupina(sum/7,257425),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -176,7 +176,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kr.confirmedToDate - arr[i-1].regions.kr.confirmedToDate)
             }
             regije.gorenjska = {
-                ime:"Gorenjska regija",
+                ime:"Gorenjska",
                 skupina: getRegijaSkupina(sum/7,205717),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -193,7 +193,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kk.confirmedToDate - arr[i-1].regions.kk.confirmedToDate)
             }
             regije.posavska = {
-                ime:"Posavska regija",
+                ime:"Posavje",
                 skupina: getRegijaSkupina(sum/7,75807),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -227,7 +227,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ng.confirmedToDate - arr[i-1].regions.ng.confirmedToDate)
             }
             regije.goriska = {
-                ime:"Goriška regija",
+                ime:"Goriška",
                 skupina: getRegijaSkupina(sum/7,118008),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -244,7 +244,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.lj.confirmedToDate - arr[i-1].regions.lj.confirmedToDate)
             }
             regije.osrednjeslovenska = {
-                ime:"Osrednjeslovenska regija",
+                ime:"Osrednjeslovenska",
                 skupina: getRegijaSkupina(sum/7,552221),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -261,7 +261,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ms.confirmedToDate - arr[i-1].regions.ms.confirmedToDate)
             }
             regije.pomurska = {
-                ime:"Pomurska regija",
+                ime:"Pomurska",
                 skupina: getRegijaSkupina(sum/7,114396),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -278,7 +278,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.za.confirmedToDate - arr[i-1].regions.za.confirmedToDate)
             }
             regije.zasavska = {
-                ime:"Zasavska regija",
+                ime:"Zasavska",
                 skupina: getRegijaSkupina(sum/7,57059),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
@@ -294,7 +294,7 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.po.confirmedToDate - arr[i-1].regions.po.confirmedToDate)
             }
             regije.primorsko_notranjska = {
-                ime:"Primorsko-Notranjska regija",
+                ime:"Primorsko-Notranjska",
                 skupina: getRegijaSkupina(sum/7,52818),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
