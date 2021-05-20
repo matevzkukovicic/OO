@@ -132,12 +132,24 @@
                 <p id="gibanje"></p>
                 <p id="zbiranje"></p>
                 <p id="strezba"></p>
+                <p id="aktivno_st_okuzb"></p>
+                <p id="skupno_potrjeno_okuzb"></p>
+                <p id="skupno_umrlih"></p>
             </h4>
         </div>
     </div>
 </div>
 <script>
     let jvzslo = document.getElementById("jugovzhodna_slovenija")
+
+    let header = document.getElementById("card_header")
+    let solanje = document.getElementById("odprtost_sol")
+    let gibanje = document.getElementById("gibanje")
+    let zbiranje = document.getElementById("zbiranje")
+    let strezba = document.getElementById("strezba")
+    let aktivnostOkuzb = document.getElementById("aktivno_st_okuzb")
+    let skupnoOkuzb = document.getElementById("skupno_potrjeno_okuzb")
+    let skupnoUmrlih = document.getElementById("skupno_umrlih")
 
     let jvColor;
     if ("{{regions.jugovzhodna.skupina}}" == "1 - črna") {
@@ -416,17 +428,14 @@
     }
 
     function setjvz() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.jugovzhodna.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.jugovzhodna.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.jugovzhodna.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.jugovzhodna.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.jugovzhodna.strezbaHraneInPijace}}"
-
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.jugovzhodna.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.jugovzhodna.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.jugovzhodna.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add(jvColor);
         zasavska.classList = '';
@@ -455,17 +464,15 @@
     }
 
     function setosv() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.osrednjeslovenska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.osrednjeslovenska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.osrednjeslovenska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.osrednjeslovenska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.osrednjeslovenska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.osrednjeslovenska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.osrednjeslovenska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.osrednjeslovenska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -493,17 +500,15 @@
     }
 
     function setgori() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.goriska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.goriska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.goriska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.goriska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.goriska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.goriska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.goriska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.goriska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -531,17 +536,15 @@
     }
 
     function setsavi() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.savinjska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.savinjska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.savinjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.savinjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.savinjska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.savinjska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.savinjska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.savinjska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -569,17 +572,15 @@
     }
 
     function setpod() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.podravska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.podravska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.podravska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.podravska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.podravska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.podravska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.podravska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.podravska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -607,17 +608,15 @@
     }
 
     function setgor() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.gorenjska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.gorenjska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.gorenjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.gorenjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.gorenjska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.gorenjska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.gorenjska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.gorenjska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -646,17 +645,15 @@
     }
 
     function setprimnot() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.primorsko_notranjska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.primorsko_notranjska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.primorsko_notranjska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.primorsko_notranjska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.primorsko_notranjska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.primorsko_notranjska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.primorsko_notranjska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.primorsko_notranjska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -684,17 +681,15 @@
     }
 
     function setpom() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.pomurska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.pomurska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.pomurska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.pomurska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.pomurska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.pomurska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.pomurska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.pomurska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -722,17 +717,15 @@
     }
 
     function setkor() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.koroska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.koroska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.koroska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.koroska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.koroska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.koroska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.koroska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.koroska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -760,17 +753,15 @@
     }
 
     function setobkras() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.obalno_kraska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.obalno_kraska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.obalno_kraska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.obalno_kraska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.obalno_kraska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.obalno_kraska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.obalno_kraska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.obalno_kraska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -798,17 +789,15 @@
     }
 
     function setpos() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.posavska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.posavska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.posavska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.posavska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.posavska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.posavska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.posavska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.posavska.deceasedToDate}}"
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");
         zasavska.classList = '';
@@ -837,17 +826,15 @@
     }
 
     function setzas() {
-        let header = document.getElementById("card_header")
-        let solanje = document.getElementById("odprtost_sol")
-        let gibanje = document.getElementById("gibanje")
-        let zbiranje = document.getElementById("zbiranje")
-        let strezba = document.getElementById("strezba")
         header.textContent = "{{regions.zasavska.ime}}"
         solanje.textContent = "Odprtost šol in fakultet: {{regions.zasavska.soleInFakultete}}"
         gibanje.textContent = "Omejitve gibanja: {{regions.zasavska.omejitevGibanja}}"
         zbiranje.textContent = "Omejitve zbiranja: {{{regions.zasavska.omejitveZbiranja}}}"
         strezba.textContent = "Strežba hrane in pijače: {{regions.zasavska.strezbaHraneInPijace}}"
 
+        aktivnostOkuzb.textContent = "Aktivno število okužb: {{regions.zasavska.activeCases}}"
+        skupnoOkuzb.textContent = "Skupno potrjeno število okužb: {{regions.zasavska.confirmedToDate}}"
+        skupnoUmrlih.textContent = "Skupno število umrlih: {{regions.zasavska.deceasedToDate}}"
 
         jvzslo.classList = '';
         jvzslo.classList.add("cls-neutral");

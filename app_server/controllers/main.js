@@ -98,9 +98,12 @@ const index = async(req, res) => {
 function getRegijeDataNew() {
     var url = "https://api.sledilnik.org/api/regions"
     var xmlhttp = new XMLHttpRequest()
+    xmlhttp.open("GET", url, false)
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
+
             const arr = JSON.parse(this.responseText)
+            console.log("ARRR ", arr[arr.length-1].regions);
             //jugovzhodna
             let sum = 0
             for(let i=arr.length-1; i>arr.length-8; i--){
@@ -112,7 +115,10 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.nm.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.nm.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.nm.deceasedToDate,
             }
             //podravska
             sum = 0
@@ -125,7 +131,10 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.mb.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.mb.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.mb.deceasedToDate,
             }
             //obalnokraska
             sum = 0
@@ -138,7 +147,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kp.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kp.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kp.deceasedToDate,
+            
             }
             //savinjska
             sum = 0
@@ -151,7 +164,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ce.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ce.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ce.deceasedToDate,
+            
             }
             //gorenjska
             sum = 0
@@ -164,7 +181,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kr.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kr.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kr.deceasedToDate,
+            
             }
             //posavska
             sum = 0
@@ -177,7 +198,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kk.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kk.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kk.deceasedToDate,
+            
             }
             //koroska
             sum = 0
@@ -190,7 +215,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.sg.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.sg.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.sg.deceasedToDate,
+            
             }
             //goriska
             sum = 0
@@ -203,7 +232,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ng.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ng.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ng.deceasedToDate,
+            
             }
             //osrednjeslovenska
             sum = 0
@@ -216,7 +249,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.lj.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.lj.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.lj.deceasedToDate,
+            
             }
             //pomurska
             sum = 0
@@ -229,7 +266,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ms.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ms.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ms.deceasedToDate,
+            
             }
             //zasavska
             sum = 0
@@ -242,7 +283,10 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.za.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.za.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.za.deceasedToDate,
             }
             //primorsko-notranjska
             sum = 0
@@ -255,11 +299,14 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.po.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.po.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.po.deceasedToDate,
+            
             }
         }
     }
-    xmlhttp.open("GET", url, false)
     xmlhttp.send()
 }
 
