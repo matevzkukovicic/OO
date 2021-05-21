@@ -76,7 +76,10 @@ body {
   left: 50%;
   transform: translatex(-50%);
 }
-
+.select2 {
+  border: 0px;
+  outline: 0px;
+}
 .loadScreen {
   width: auto;
   max-height: calc(100vh - 50px);
