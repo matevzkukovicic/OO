@@ -91,6 +91,20 @@ body {
   display: flex;
   align-items: center;
 }
+.pandaImages {
+  display: flex;
+  align-items: flex-end;
+  bottom: 0;
+  right: 0;
+}
+@media (min-width: 576px) {
+  .pandaImages {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
 .svg-container {
   height: 80%;
   display: flex;
@@ -113,8 +127,7 @@ modalDiv {
   font-family: Repro;
 }
 
-
- /*eye tracking 1
+/*eye tracking 1
 .move-area{/*normally use body
   width: 100vw;
   height: 100vh;
@@ -150,7 +163,6 @@ modalDiv {
 }
 */
 
-
 #eyetest svg {
   display: block;
   width: 80px;
@@ -161,7 +173,8 @@ modalDiv {
 circle.eye {
   fill: #a1a1b6;
 }
-path.top, path.bottom {
+path.top,
+path.bottom {
   fill: transparent;
   stroke: #a1a1b6;
   stroke-width: 1.3px;
@@ -188,7 +201,7 @@ path.top, path.bottom {
   width: 100px;
   height: 100px;
 }
-.mouth-outer path.top, .mouth-outer path.bottom {
+.mouth-outer path.top,
+.mouth-outer path.bottom {
   stroke-width: 2px;
 }
-
