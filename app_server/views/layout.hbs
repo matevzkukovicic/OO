@@ -173,6 +173,11 @@
             crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf-8" src="../javascripts/eyeTracking.js"></script>
 	<script>
+		console.log(window.location.pathname)
+		if(window.location.pathname == "/map/"){
+		    document.getElementById("mySidenav").style.transition = "0s"
+		    openNav()
+		}
 		function openNav() {
 			if(window.innerWidth<576){
 				document.getElementById("mySidenav").style.width = "100%";
@@ -184,7 +189,8 @@
 		}
 
 		function closeNav() {
-		  document.getElementById("mySidenav").style.width = "0";
+		    document.getElementById("mySidenav").style.transition = "0.5s";
+		  	document.getElementById("mySidenav").style.width = "0";
 		}
 
 		function openBol() {
