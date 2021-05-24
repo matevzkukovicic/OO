@@ -7,3 +7,10 @@ hbs.registerHelper('colorRegions', (regions) => {
 
     }
 });
+
+hbs.registerHelper('percentColor', (percent) => {
+    if(percent >0)
+        return '#E66C58'
+    else
+        return '#AFEFD8'
+});

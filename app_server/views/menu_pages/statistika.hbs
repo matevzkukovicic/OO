@@ -14,40 +14,18 @@
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <style>
         .modal-header{
-            height:30%;
+            height:20%;
             background: #f4f4f4;
             padding: 0px;
             border-bottom: none;
         }
-		.naslov{
-			margin-left:5%;
-			margin-top: 2%;
-			margin-bottom: 3%;
-			font-family: Repro_bold;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 56px;
-			line-height: 80px;
-
-			color: #000000;
-		}
-		.faza{
-            margin-left: 5vw;
-            margin-right: 5vw;
-			height: 120px;
-			width: 90vw;
-			border: 2px solid black;
-			border-radius: 1rem;
-			display: flex;
-			flex-wrap: wrap;
-			color: black;
-			font-family: Repro_screen;
-		}
-		@media (max-width: 990px) {
-      .naslov{font-size: 2.5rem;}
-  }
+        body {
+            background: #f4f4f4;
+        }
     </style>
 </head>
+<div class="bcg">
+
 <div>
     <div class="modal-header">
         <h5 style="font-family:Repro_screen;
@@ -57,68 +35,94 @@
             line-height: 80px;
             letter-spacing: 0em;
             text-align: left;
-            margin:5vh 5vw 0px 5vw"
-        >Statistika</h5>
+            margin:5vh 5vw 0px 5vw"        >Statistika</h5>
         <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
                 <span aria-hidden="true" style="font-size: 50px">&times;</span>
             </button>
         </a>
     </div>
-    <div class="modal-body" id="text" style="font-family: Repro_screen;
-        font-size: 38px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 54px;
-        letter-spacing: 0em;
-        text-align: left;
-        margin:3% 5% 0% 5%;
-        ">
-        <div class="d-flex flex-row">
-        <div class="p-2"  style="border: 5px solid #000000; box-sizing: border-box; border-radius: 20px;"><p class="simptomi">
-			    število do zdaj opravljenih testov: {{statistics.overallTests}}
-			</p></div>
-        <div class="p-2">Flex item 2</div>
-        <div class="p-2">Flex item 3</div>
+    <div class="row justify-content-center">
+        <div class="card statistikaCard col-lg-2 col-md-5 firstCard" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Testi na dan: PCR</h6>
+                <h4 class="card-title">{{data.testiNaDanPCR}}</h4>
+                <div class = " row statRow">
+                     <div class="col-lg-5 col-md-12 col-sm-12 statistikaFirstPic"><img src="/images/Plus.svg" /> {{data.pozitivniPCR}}</div>
+                     <div class="col-lg-5 col-md-12 col-sm-12 "><img src="/images/Procent.svg" /> {{data.procentPozitivnihPCR}}%</div>
+                </div>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
         </div>
-		<div>
-			<p class="simptomi">
-			    število do zdaj opravljenih testov: {{statistics.overallTests}}
-			</p>
-			<p class="simptomi">
-			    število do zdaj pozitivnih testov: {{statistics.overallPositive}}
-			</p>
-			<p class="simptomi">
-			    število včeraj opravljenih testov: {{statistics.yesterdayTests}}
-			</p>
-			<p class="simptomi">
-			    število včeraj pozitivnih testov: {{statistics.yesterdayPositiveTests}}
-			</p>
-			<p class="simptomi">
-			    število aktivnih okužb: {{statistics.activeCases}}
-			</p>
-			<p class="simptomi">
-			    število hospitaliziranih: {{statistics.inHospital}}
-			</p>
-			<p class="simptomi">
-			    število ljudi na intenzivni negi: {{statistics.ICU}}
-			</p>
-			<p class="simptomi">
-			    včerajšnje število umrlih ljudi: {{statistics.deceased}}
-			</p>
-		</div>
+        <div class="card statistikaCard col-lg-2 col-md-5 statNoPic" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Testi na dan: HAT</h6>
+                <h4 class="card-title hatH4">{{data.testiNaDanHAT}}</h4>
+                <div class = "row statRow">
+                    <div class="col-lg-5 col-md-12 col-sm-12 statistikaFirstPic">     </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">     </div>
+                </div>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+        <div class="card statistikaCard col-lg-2 col-md-5 statNoPic" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Aktivni primeri</h6>
+                <h4 class="card-title hatH4">{{data.aktivniPrimeri}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_aktivniPrimeri}} {{/percentColor}}">{{data.razlika_aktivniPrimeri}}%</span></h4>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+        <div class="card statistikaCard col-lg-2 col-md-5" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Novi primeri</h6>
+                <h4 class="card-title"> {{data.noviPrimeri}}<span class="tealText smallText " style="color: {{#percentColor data.razlika_noviPrimeri}} {{/percentColor}}"> {{data.razlika_noviPrimeri}}%</span></h4>
+                <p>povprečje zadnjih 7 dni: <br> {{data.tedenskoPovprecje}}</p>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+
     </div>
+    <div class="row justify-content-center statistikaSecondCard">
+        <div class="card statistikaCard col-lg-2 col-md-5 firstCard" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Hospitalizirani</h6>
+                <h4 class="card-title">{{data.hospitalizirani}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_hospitalizirani}} {{/percentColor}}"> {{data.razlika_hospitalizirani}}%</span></h4>
+                <div class = "row statRow">
+                    <div class="col-lg-3 col-md-12 col-sm-12 "><img class="img-responsive" src="/images/Minus.png" /> {{data.dehospitalizirani}} izpuščenih v dnevu </div>
+                </div>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+        <div class="card statistikaCard col-lg-2 col-md-5 statNoPic" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">V intenzivni terapiji</h6>
+                <h4 class="card-title hatH4">{{data.intenzivnaTerapija}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_vIntenzivni}} {{/percentColor}}"> {{data.razlika_vIntenzivni}}% </span></h4>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+        <div class="card statistikaCard col-lg-2 col-md-5 firstCard statNoPic" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Umrli</h6>
+                <h4 class="card-title">{{data.skupnoUmrlih}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_umrli}} {{/percentColor}}"> {{data.razlika_umrli}}%</span></h4>
+                <div class = "row statRow">
+                    <div class="col-lg-3 col-md-12 col-sm-12 "><img class="img-responsive" src="/images/Kriz.svg" /> {{data.umrli}} mrtvih v dnevu </div>
+                </div>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+        <div class="card statistikaCard col-lg-2 col-md-5" >
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 ">Cepljenih oseb</h6>
+                <h4 class="card-title " > <span class="redText smallText"> 1x </span>{{data.cepljeniEnkrat}}</h4>
+                <div class = " row statRow ">
+                    <div class="col-lg-5 col-md-12 col-sm-12 statistikaFirstPic"><span class="redText smallText">2x </span> {{data.cepljeniDvakrat}}</div>
+                    <div class="col-lg-5 col-md-12 col-sm-12"><img src="/images/Procent.svg" /> {{data.cepljeniProcent}}%</div>
+                </div>
+                <p class="statDatum">{{data.datum}}</p>
+            </div>
+        </div>
+
+    </div>
+
 </div>
-<script>
-	document.getElementsByTagName("body")[0].setAttribute("style", "background-color: #f4f4f4; padding: 0px")
-    if(window.innerWidth<576){
-        document.getElementsByTagName("body")[0].setAttribute("style", "background: #f4f4f4; padding:0%")
-        document.getElementsByTagName("h5")[0].setAttribute("style", "font-family:Repro_screen;" +
-                "font-size: 38px;font-style: normal;font-weight: 700; line-height: 54,49px;" +
-                "letter-spacing: 0em;text-align: left;margin:2vh 3vw 25vh 5.5vw")
-        document.getElementById("text").setAttribute("style", "font-family: Repro_screen;font-size: 18px;" +
-                "font-style: normal;font-weight: 400;line-height: 26px;letter-spacing: 0em;" +
-                "text-align: left;margin:3% 5% 0% 5%;")
-        document.getElementById("iks").setAttribute("style", "margin:5vh 6vw 25vh 5vw")
-    }
-</script>
+</div>

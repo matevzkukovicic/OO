@@ -433,52 +433,59 @@ const statistika = async(req, res) => {
     const resp = await axios.get('stats');
     const summary = await axios.get('summary');
 
-    let covidStats = resp.data[resp.data.length-1];
+
+    let covidStats = resp.data[resp.data.length-2];
     let covidSummary = summary.data;
+    let covidCompareStats = resp.data[resp.data.length-3];
 
     let date = new Date(covidStats.year, covidStats.month-1, covidStats.day);
-    
-    statsDate = date.toLocaleDateString("sl-SL", {
+    let statsDate = date.toLocaleDateString("sl-SL", {
         weekday: "short",
         year: "numeric",
         month: "2-digit",
         day: "numeric"});
+    var razlika_aktivniPrimeri = toPercent(covidStats.cases.active,covidCompareStats.cases.active);
+    var razlika_noviPrimeri = toPercent(covidStats.cases.confirmedToday,covidCompareStats.cases.confirmedToday);
+    var razlika_hospitalizirani = toPercent(covidStats.statePerTreatment.inHospital,covidCompareStats.statePerTreatment.inHospital);
+    var razlika_vIntenzivni = toPercent(covidStats.statePerTreatment.inICU,covidCompareStats.statePerTreatment.inICU);
+    var razlika_umrli = toPercent(covidStats.deceasedToDate,covidCompareStats.deceasedToDate);
 
-    console.log(statsDate); // ned, 23. 05. 2021
 
-    let datum = statsDate; // datum 
-    let testiNaDanPCR = covidStats.performedTests // testi na dan PCR
-    let pozitivniPCR = covidStats.positiveTests // pozitivni na PCR testu 
-    let procentPozitivnihPCR = covidSummary.testsToday.subValues.percent; 
-    
-    let testiNaDanHAT = covidSummary.testsTodayHAT.value; 
+    let stats = {
+        datum: statsDate,
+        testiNaDanPCR : covidStats.performedTests,
+        pozitivniPCR : covidStats.positiveTests, // pozitivni na PCR testu
+        procentPozitivnihPCR : covidSummary.testsToday.subValues.percent,
+        testiNaDanHAT : covidSummary.testsTodayHAT.value,
+        tedenskoPovprecje : covidSummary.casesAvg7Days.value.toString().substring(0,covidSummary.casesAvg7Days.value.toString().length-4),// sedemdnevno povprečje števila okužb
+        incedencaPovprecja : covidSummary.casesAvg7Days.diffPercentage,  // za koliko je povprečno število okužb naraslo/padlo v primerjavi s prejšnjim tednom
+       aktivniPrimeri : covidStats.cases.active,// aktivni primeri
+        noviPrimeri: covidStats.cases.confirmedToday,
+        hospitalizirani : covidStats.statePerTreatment.inHospital,
+        dehospitalizirani : covidStats.statePerTreatment.outOfHospital,// hospitalizirani
+       intenzivnaTerapija : covidStats.statePerTreatment.inICU, // na intenzivni terapiji
+       skupnoUmrlihHospitaliziranih : covidStats.statePerTreatment.deceasedToDate, // število umrlih
+       umrliHospitalizirani : covidStats.statePerTreatment.deceased,
+        umrli: covidStats.deceased,// število umrlih
+        skupnoUmrlih: covidStats.deceasedToDate,
+       cepljeniDvakrat : covidStats.vaccination.administered2nd.toDate,
+       cepljeniEnkrat : covidStats.vaccination.administered.toDate,
+        cepljeniProcent : covidSummary.vaccinationSummary.subValues.percent,
+        razlika_aktivniPrimeri : razlika_aktivniPrimeri,
+        razlika_noviPrimeri : razlika_noviPrimeri,
+        razlika_hospitalizirani : razlika_hospitalizirani,
+        razlika_vIntenzivni : razlika_vIntenzivni,
+        razlika_umrli : razlika_umrli
+    };
 
-    let tedenskoPovprecje = covidSummary.casesAvg7Days.value; // sedemdnevno povprečje števila okužb
-    let incedencaPovprecja = covidSummary.casesAvg7Days.diffPercentage;  // za koliko je povprečno število okužb naraslo/padlo v primerjavi s prejšnjim tednom
 
-    let aktivniPrimeri = covidStats.cases.active; // aktivni primeri
-    let hospitalizirani = covidStats.statePerTreatment.inHospital; // hospitalizirani
-    let intenzivnaTerapija = covidStats.statePerTreatment.inICU; // na intenzivni terapiji
-
-    let skupnoUmrlih = covidStats.statePerTreatment.deceasedToDate; // število umrlih
-    let umrli = covidStats.statePerTreatment.deceased; // število umrlih včeraj
-
-    let cepljeniDvakrat = covidStats.vaccination.administered2nd.toDate; 
-    let cepljeniEnkrat = covidStats.vaccination.administered.toDate; 
-    let cepljeniProcent = covidSummary.vaccinationSummary.subValues.percent; 
-
-    res.render('menu_pages/statistika', {statistics:{  
-            yesterdayTests:covidStats.performedTests, 
-            yesterdayPositiveTests:covidStats.positiveTests,
-            overallTests:covidStats.performedTestsToDate, 
-            overallPositive:covidStats.positiveTestsToDate,
-            activeCases:covidStats.cases.active,
-            inHospital:covidStats.statePerTreatment.inHospital,
-            ICU:covidStats.statePerTreatment.inICU,
-            deceased:covidStats.statePerTreatment.deceased,
-        }, layout: false});
+    res.render('menu_pages/statistika', {data:stats, layout: false});
 };
-
+function toPercent(data1, data2){
+    let prefix = data1>data2 ? '+' : '-';
+    let raz = Math.abs(1-(data1/data2));
+    return (prefix+""+raz.toString()).substring(0,5);
+}
 const simptomi = (req, res) => {
     res.render('menu_pages/simptomi', {layout: false});
 };
