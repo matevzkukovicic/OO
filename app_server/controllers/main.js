@@ -98,9 +98,12 @@ const index = async(req, res) => {
 function getRegijeDataNew() {
     var url = "https://api.sledilnik.org/api/regions"
     var xmlhttp = new XMLHttpRequest()
+    xmlhttp.open("GET", url, false)
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
+
             const arr = JSON.parse(this.responseText)
+            console.log("ARRR ", arr[arr.length-1].regions);
             //jugovzhodna
             let sum = 0
             for(let i=arr.length-1; i>arr.length-8; i--){
@@ -112,7 +115,10 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.nm.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.nm.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.nm.deceasedToDate,
             }
             //podravska
             sum = 0
@@ -120,12 +126,15 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.mb.confirmedToDate - arr[i-1].regions.mb.confirmedToDate)
             }
             regije.podravska = {
-                ime:"Podravska regija",
+                ime:"Podravska",
                 skupina: getRegijaSkupina(sum/7, 324875),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.mb.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.mb.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.mb.deceasedToDate,
             }
             //obalnokraska
             sum = 0
@@ -133,12 +142,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kp.confirmedToDate - arr[i-1].regions.kp.confirmedToDate)
             }
             regije.obalno_kraska = {
-                ime:"Obalno-Kraška regija",
+                ime:"Obalno-Kraška",
                 skupina: getRegijaSkupina(sum/7, 115613),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kp.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kp.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kp.deceasedToDate,
+            
             }
             //savinjska
             sum = 0
@@ -146,12 +159,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ce.confirmedToDate - arr[i-1].regions.ce.confirmedToDate)
             }
             regije.savinjska = {
-                ime:"Savinjska regija",
+                ime:"Savinjska",
                 skupina: getRegijaSkupina(sum/7,257425),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ce.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ce.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ce.deceasedToDate,
+            
             }
             //gorenjska
             sum = 0
@@ -159,12 +176,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kr.confirmedToDate - arr[i-1].regions.kr.confirmedToDate)
             }
             regije.gorenjska = {
-                ime:"Gorenjska regija",
+                ime:"Gorenjska",
                 skupina: getRegijaSkupina(sum/7,205717),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kr.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kr.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kr.deceasedToDate,
+            
             }
             //posavska
             sum = 0
@@ -172,12 +193,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.kk.confirmedToDate - arr[i-1].regions.kk.confirmedToDate)
             }
             regije.posavska = {
-                ime:"Posavska regija",
+                ime:"Posavje",
                 skupina: getRegijaSkupina(sum/7,75807),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.kk.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.kk.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.kk.deceasedToDate,
+            
             }
             //koroska
             sum = 0
@@ -190,7 +215,11 @@ function getRegijeDataNew() {
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.sg.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.sg.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.sg.deceasedToDate,
+            
             }
             //goriska
             sum = 0
@@ -198,12 +227,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ng.confirmedToDate - arr[i-1].regions.ng.confirmedToDate)
             }
             regije.goriska = {
-                ime:"Goriška regija",
+                ime:"Goriška",
                 skupina: getRegijaSkupina(sum/7,118008),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ng.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ng.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ng.deceasedToDate,
+            
             }
             //osrednjeslovenska
             sum = 0
@@ -211,12 +244,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.lj.confirmedToDate - arr[i-1].regions.lj.confirmedToDate)
             }
             regije.osrednjeslovenska = {
-                ime:"Osrednjeslovenska regija",
+                ime:"Osrednjeslovenska",
                 skupina: getRegijaSkupina(sum/7,552221),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.lj.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.lj.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.lj.deceasedToDate,
+            
             }
             //pomurska
             sum = 0
@@ -224,12 +261,16 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.ms.confirmedToDate - arr[i-1].regions.ms.confirmedToDate)
             }
             regije.pomurska = {
-                ime:"Pomurska regija",
+                ime:"Pomurska",
                 skupina: getRegijaSkupina(sum/7,114396),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.ms.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.ms.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.ms.deceasedToDate,
+            
             }
             //zasavska
             sum = 0
@@ -237,12 +278,15 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.za.confirmedToDate - arr[i-1].regions.za.confirmedToDate)
             }
             regije.zasavska = {
-                ime:"Zasavska regija",
+                ime:"Zasavska",
                 skupina: getRegijaSkupina(sum/7,57059),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.za.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.za.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.za.deceasedToDate,
             }
             //primorsko-notranjska
             sum = 0
@@ -250,16 +294,19 @@ function getRegijeDataNew() {
                 sum = sum + (arr[i].regions.po.confirmedToDate - arr[i-1].regions.po.confirmedToDate)
             }
             regije.primorsko_notranjska = {
-                ime:"Primorsko-Notranjska regija",
+                ime:"Primorsko-Notranjska",
                 skupina: getRegijaSkupina(sum/7,52818),
                 soleInFakultete:"Izvaja se pouk na osnovnih in srednjih šolah. Izvaja se pouk na fakultetah.",
                 omejitevGibanja: "Ni omejitev gibanja.",
                 omejitveZbiranja: "Dovoljeno zbiranje do 10 oseb.",
-                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. "
+                strezbaHraneInPijace: "Odprte so terase in vrtovi, notranjost gostinskih lokalov za prebolevnike, cepljene ali testirane. Nastanitveni obrati do 50% zasedenosti. ",
+                activeCases: arr[arr.length-1].regions.po.activeCases,
+                confirmedToDate: arr[arr.length-1].regions.po.confirmedToDate,
+                deceasedToDate: arr[arr.length-1].regions.po.deceasedToDate,
+            
             }
         }
     }
-    xmlhttp.open("GET", url, false)
     xmlhttp.send()
 }
 
@@ -469,7 +516,7 @@ const statistika = async(req, res) => {
       
     let covidStats = resp.data[resp.data.length-2];
     console.log("STATS: ", covidStats);
-    res.render('statistika', {statistics:{  
+    res.render('menu_pages/statistika', {statistics:{  
             yesterdayTests:covidStats.performedTests, 
             yesterdayPositiveTests:covidStats.positiveTests,
             overallTests:covidStats.performedTestsToDate, 
@@ -482,19 +529,19 @@ const statistika = async(req, res) => {
 };
 
 const simptomi = (req, res) => {
-    res.render('simptomi', {layout: false});
+    res.render('menu_pages/simptomi', {layout: false});
 };
 
 const zdravljenje = (req, res) => {
-    res.render('zdravljenje', {layout: false});
+    res.render('menu_pages/zdravljenje', {layout: false});
 };
 
 const semafor = (req, res) => {
-    res.render('semafor', {layout: false})
+    res.render('menu_pages/semafor', {layout: false})
 };
 
 const preprecevanje = (req, res) => {
-    res.render('preprecevanje', {layout: false})
+    res.render('menu_pages/preprecevanje', {layout: false})
 };
 
 const novice = (req, res) => {
@@ -517,27 +564,27 @@ const novice = (req, res) => {
         }
         xmlhttp.open("GET", url, false)
         xmlhttp.send()
-    res.render('novice', {noviceText: noviceText, layout: false})
+    res.render('menu_pages/novice', {noviceText: noviceText, layout: false})
 };
 
 const crna = (req, res) => {
-    res.render('crna', {layout: false})
+    res.render('menu_pages/semafor/crna', {layout: false})
 }
 
 const rdeca = (req, res) => {
-    res.render('rdeca', {layout: false})
+    res.render('menu_pages/semafor/rdeca', {layout: false})
 }
 
 const oranzna = (req, res) => {
-    res.render('oranzna', {layout: false})
+    res.render('menu_pages/semafor/oranzna', {layout: false})
 }
 
 const rumena = (req, res) => {
-    res.render('rumena', {layout: false})
+    res.render('menu_pages/semafor/rumena', {layout: false})
 }
 
 const zelena = (req, res) => {
-    res.render('zelena', {layout: false})
+    res.render('menu_pages/semafor/zelena', {layout: false})
 }
 
 module.exports = {
