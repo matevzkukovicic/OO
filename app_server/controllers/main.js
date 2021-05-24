@@ -432,11 +432,10 @@ const eu = async(req, res) => {
 const statistika = async(req, res) => {
     const resp = await axios.get('stats');
     const summary = await axios.get('summary');
-    console.log("SUMMARY ", summary);
+
     let covidStats = resp.data[resp.data.length-1];
     let covidSummary = summary.data;
 
-    console.log(covidSummary)
     let date = new Date(covidStats.year, covidStats.month-1, covidStats.day);
     
     statsDate = date.toLocaleDateString("sl-SL", {
