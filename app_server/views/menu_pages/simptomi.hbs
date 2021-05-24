@@ -19,30 +19,14 @@
             padding: 0px;
             border-bottom: none;
         }
-		.naslov{
-			margin-left:5%;
-			margin-top: 2%;
-			margin-bottom: 3%;
-			font-family: Repro_bold;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 56px;
-			line-height: 80px;
+        .modal-content{
+            border: none !important;
 
-			color: #000000;
-		}
-		.faza{
-            margin-left: 5vw;
-            margin-right: 5vw;
-			height: 120px;
-			width: 90vw;
-			border: 2px solid black;
-			border-radius: 1rem;
-			display: flex;
-			flex-wrap: wrap;
-			color: black;
-			font-family: Repro_screen;
-		}
+        }
+        body {
+            background: #f4f4f4;
+        }
+
 		@media (max-width: 990px) {
       .naslov{font-size: 2.5rem;}
   }
@@ -81,10 +65,13 @@
 			<p>
             COVID-19 vpliva na različne ljudi na različne načine. Pri večini okuženih ljudi se razvije blaga do zmerna oblika bolezni, zdravljenje pa poteka brez hospitalizacije.
             </p>
-            <div class="d-flex flex-row justify-content-between mt-5">
-                <div class="p-2" style="border: 5px solid #000000;
+            <div class="row justify-content-center mt-5">
+                <div class="p-2 col-xl-3 col-lg-9 col-md-8 " style="border: 5px solid #000000;
 box-sizing: border-box;
-border-radius: 30px;">
+border-radius: 30px;
+margin-right:1rem;
+padding: 3rem !important;
+margin-bottom:1rem">
                     <p><b> Najbolj pogosti simptomi:</b></p>
                     <ul>
                         <li>vročina</li>
@@ -93,9 +80,12 @@ border-radius: 30px;">
 
                     </ul>
                 </div>
-                <div class="p-2" style="border: 5px solid #000000;
+                <div class="p-2 col-xl-3 col-lg-9 col-md-8" style="border: 5px solid #000000;
 box-sizing: border-box;
-border-radius: 30px;">
+border-radius: 30px;
+ margin-right:1rem;
+padding: 3rem !important;
+margin-bottom: 1rem;">
 			        <p><b>Manj pogosti simptomi:</b></p>
 			        <ul>
                         <li>bolečine</li>
@@ -106,9 +96,11 @@ border-radius: 30px;">
                         <li>izpuščaji na koži</li>
 			        </ul>
                 </div>
-                <div class="p-2" style="border: 5px solid #000000;
+                <div class="p-2 col-xl-3 col-md-8  col-lg-9" style="border: 5px solid #000000;
 box-sizing: border-box;
-border-radius: 30px;">
+border-radius: 30px;
+padding: 3rem !important;
+margin-bottom: 1rem;">
                     <p><b>Resni simptomi:</b></p>
                     <ul>
                         <li>težave z dihanjem, pomanjkanje sape</li>
