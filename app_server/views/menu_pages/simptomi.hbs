@@ -48,7 +48,10 @@
   }
     </style>
 </head>
+<div class="bcg">
 <div>
+    <div class="modal-content"  style="
+        background:#f4f4f4;">
     <div class="modal-header">
         <h5 style="font-family:Repro_screen;
             font-size: 56px;
@@ -57,7 +60,7 @@
             line-height: 80px;
             letter-spacing: 0em;
             text-align: left;
-            margin:5vh 5vw 0px 5vw"
+            margin:5vh 5vw 0px 5vw"        
         >Simptomi</h5>
         <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
@@ -65,51 +68,63 @@
             </button>
         </a>
     </div>
-    <div class="modal-body" id="text" style="font-family: Repro_screen;
-        font-size: 38px;
+    <div class="modal-body " id="text" style="font-family: Repro_screen;
+        font-size: 32px;
         font-style: normal;
         font-weight: 400;
         line-height: 54px;
         letter-spacing: 0em;
         text-align: left;
-        margin:3% 5% 0% 5%;
+        margin:0% 5% 0% 5%;
         ">
 		<div>
 			<p>
-			            COVID-19 vpliva na različne ljudi na različne načine. Pri večini okuženih ljudi se razvije blaga do zmerna oblika bolezni, zdravljenje pa poteka brez hospitalizacije.
-			        </p>
-			        <p><b> Najbolj pogosti simptomi:</b></p>
+            COVID-19 vpliva na različne ljudi na različne načine. Pri večini okuženih ljudi se razvije blaga do zmerna oblika bolezni, zdravljenje pa poteka brez hospitalizacije.
+            </p>
+            <div class="d-flex flex-row justify-content-between mt-5">
+                <div class="p-2" style="border: 5px solid #000000;
+box-sizing: border-box;
+border-radius: 30px;">
+                    <p><b> Najbolj pogosti simptomi:</b></p>
+                    <ul>
+                        <li>vročina</li>
+                        <li>suh kašelj</li>
+                        <li>izčrpanost</li>
+
+                    </ul>
+                </div>
+                <div class="p-2" style="border: 5px solid #000000;
+box-sizing: border-box;
+border-radius: 30px;">
+			        <p><b>Manj pogosti simptomi:</b></p>
 			        <ul>
-			<li>vročina</li>
-			<li>suh kašelj</li>
-			<li>izčrpanost</li>
-
+                        <li>bolečine</li>
+                        <li>dražeče grlo</li>
+                        <li>driska</li>
+                        <li>glavobol</li>
+                        <li>izguba vonja in okusa</li>
+                        <li>izpuščaji na koži</li>
 			        </ul>
-
-			<p><b>Manj pogosti simptomi:</b></p>
-			        <ul>
-			<li>bolečine</li>
-			<li>dražeče grlo</li>
-			<li>driska</li>
-			<li>glavobol</li>
-			<li>izguba vonja in okusa</li>
-			<li>izpuščaji na koži</li>
-
-			        </ul>
-
-			<p><b>Resni simptomi:</b></p>
-			        <ul>
-			<li>težave z dihanjem, pomanjkanje sape</li>
-			<li>bolečine v prsih</li>
-			<li>izguba govora ali motoričnih sposobnosti</li>
-			        </ul>
-
-			<p><b>Takoj poiščite medicinsko pomoč če vas doletijo resni simptomi. Preden obiščete vašega zdravnika ali zdravstveno ustanovo se najavite preko klica.</b> </p>
+                </div>
+                <div class="p-2" style="border: 5px solid #000000;
+box-sizing: border-box;
+border-radius: 30px;">
+                    <p><b>Resni simptomi:</b></p>
+                    <ul>
+                        <li>težave z dihanjem, pomanjkanje sape</li>
+                        <li>bolečine v prsih</li>
+                        <li>izguba govora ali motoričnih sposobnosti</li>
+                    </ul>
+                </div>
+            </div>
+			<p class="mt-5"><b>Takoj poiščite medicinsko pomoč če vas doletijo resni simptomi. Preden obiščete vašega zdravnika ali zdravstveno ustanovo se najavite preko klica.</b> </p>
 			<p><b>Ljudje z blažjimi simptomi, ki so drugače zdravi, naj simptome blažijo doma.</b></p>
 			<p><b>V povprečju traja 5-6 dni od okužbe do pojavitve simptomov, v najslabšem primeru traja do 14 dni.</b></p>
 		</div>
+        </div>
     </div>
 </div>
+
 <script>
 	document.getElementsByTagName("body")[0].setAttribute("style", "background-color: #f4f4f4; padding: 0px")
     if(window.innerWidth<576){

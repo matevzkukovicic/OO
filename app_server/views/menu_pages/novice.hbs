@@ -45,23 +45,27 @@
 		}
     </style>
 </head>
+<div class="bcg">
 <div>
-    <div class="modal-header">
-        <h5 style="font-family:Repro_screen;
-            font-size: 56px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 80px;
-            letter-spacing: 0em;
-            text-align: left;
-            margin:5vh 5vw 0px 5vw"
-        >Novice</h5>
-        <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
-                <span aria-hidden="true" style="font-size: 50px">&times;</span>
-            </button>
-        </a>
-    </div>
+    <div class="modal-content"  style="
+        background:#f4f4f4;">
+        <div class="modal-header" style="
+            background:#f4f4f4;">
+            <h5 style="font-family:Repro_screen;
+                font-size: 56px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 80px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin:5vh 5vw 0px 5vw"
+            >Novice</h5>
+            <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
+                    <span aria-hidden="true" style="font-size: 50px">&times;</span>
+                </button>
+            </a>
+        </div>
     <div class="modal-body" id="text" style="font-family: Repro_screen;
         font-size: 38px;
         font-style: normal;
@@ -71,15 +75,19 @@
         text-align: left;
         margin:3% 5% 0% 5%;
         ">
-		<div>
+		<div class="container">
 			{{#noviceText}}
+            <div class="mb-5" style="border: 3px solid #000000;">
 			<a href="{{href}}" style="text-decoration: none; margin:2%; font-family: Repro_screen; color:black">
 				<h5 style="font-size: 12px; margin:2%">{{datum}}</h5>
-				<h1 style="font-size: 30px; margin:0% 2% 2% 2%">{{naslov}}</h1>
+				<h1 style="font-size: 26px; margin:0% 2% 2% 2%">{{naslov}}</h1>
 			</a>
+            </div>
 			{{/noviceText}}
 		</div>
     </div>
+    </div>
+</div>
 </div>
 <script>
 	document.getElementsByTagName("body")[0].setAttribute("style", "background-color: #E5E5E5; padding: 0px")
