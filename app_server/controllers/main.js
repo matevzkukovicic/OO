@@ -11,88 +11,8 @@ const loadingScreen = (req, res) => {
 };
 
 const index = async(req, res) => {
-    let fs = require('fs');
     getRegijeDataNew()
     res.render('home', { sloSelected:true, title: 'PandaMia', regions:regije});
-    /*
-    let selectedRegion = req.params.region; 
-    if(selectedRegion && selectedRegion !== "favicon.ico") {
-      
-      const resp = await axios.get('regions');
-      let numOfData = Object.keys(resp.data).length;
-      let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
-      
-      let covidStats; 
-      if(!regionStats.mb) {
-        covidStats = resp.data[numOfData-2];
-      } else {
-        covidStats = regionStats; 
-      }*/
-
-      /* REGION STATS 
-        mb: PODRAVSKA 
-        nm: JUGOVZHODNA
-        kp: OBALNO-KRAŠKA
-        ce: SAVINJSKA
-        kr: GORENJSKA
-        kk: POSAVSKA
-        sg: KOROŠKA
-        ng: GORIŠKA
-        lj: OSREDNJESLOVENSKA
-        po: PRIMORSKO-NOTRANJSKA
-        ms: POMURSKA
-        za: ZASAVSKA
-      */ 
-    /*
-      let regionKey; 
-      let region; 
-      if(selectedRegion === "podravska") {
-        regionKey = covidStats.regions.mb; 
-        region = regije.podravska;
-      } else if(selectedRegion === "jugovzhodna") {
-        regionKey = covidStats.regions.nm;   
-        region = regije.jugovzhodna;
-      } else if(selectedRegion === "obalno-kraska") {
-        regionKey = covidStats.regions.kp;
-        region = regije.obalno_kraska;
-      } else if(selectedRegion === "savinjska") {
-        regionKey = covidStats.regions.ce; 
-        region = regije.savinjska;
-      } else if(selectedRegion === "gorenjska") {
-        regionKey = covidStats.regions.kr; 
-        region = regije.gorenjska;
-      } else if(selectedRegion === "spodnjeposavska") {
-        regionKey = covidStats.regions.kk; 
-        region = regije.posavska;
-      } else if(selectedRegion === "koroska") {
-        regionKey = covidStats.regions.sg;
-        region = regije.koroska;
-      } else if(selectedRegion === "goriska") {
-        regionKey = covidStats.regions.ng; 
-        region = regije.goriska;
-      } else if(selectedRegion === "osrednjeslovenska") {
-        regionKey = covidStats.regions.lj;
-        region = regije.osrednjeslovenska;
-      } else if(selectedRegion === "notranjsko-kraska") {
-        regionKey = covidStats.regions.po;  
-        region = regije.primorsko_notranjska;
-      } else if(selectedRegion === "pomurska") {
-        regionKey = covidStats.regions.ms; 
-        region = regije.pomurska;
-      } else if(selectedRegion === "zasavska") {
-        regionKey = covidStats.regions.za; 
-        region = regije.zasavska;
-      }
-
-      region.activeCases = regionKey.activeCases; 
-      region.confirmedToDate = regionKey.confirmedToDate; 
-      region.deceasedToDate = regionKey.deceasedToDate;
-
-      console.log(region);
-      res.render('home', { title: 'PandaMia', region:region});
-    } else {
-      res.render('home', { title: 'PandaMia', region:region});
-    }*/
 };
 
 function getRegijeDataNew() {
@@ -511,11 +431,43 @@ const eu = async(req, res) => {
 
 const statistika = async(req, res) => {
     const resp = await axios.get('stats');
-    let numOfData = Object.keys(resp.data).length;
-    let regionStats = resp.data[numOfData-1]; // we try to get region data from today if Slednik has been updated already and if not, we get yesterday's region data
-      
-    let covidStats = resp.data[resp.data.length-2];
-    console.log("STATS: ", covidStats);
+    const summary = await axios.get('summary');
+    console.log("SUMMARY ", summary);
+    let covidStats = resp.data[resp.data.length-1];
+    let covidSummary = summary.data;
+
+    console.log(covidSummary)
+    let date = new Date(covidStats.year, covidStats.month-1, covidStats.day);
+    
+    statsDate = date.toLocaleDateString("sl-SL", {
+        weekday: "short",
+        year: "numeric",
+        month: "2-digit",
+        day: "numeric"});
+
+    console.log(statsDate); // ned, 23. 05. 2021
+
+    let datum = statsDate; // datum 
+    let testiNaDanPCR = covidStats.performedTests // testi na dan PCR
+    let pozitivniPCR = covidStats.positiveTests // pozitivni na PCR testu 
+    let procentPozitivnihPCR = covidSummary.testsToday.subValues.percent; 
+    
+    let testiNaDanHAT = covidSummary.testsTodayHAT.value; 
+
+    let tedenskoPovprecje = covidSummary.casesAvg7Days.value; // sedemdnevno povprečje števila okužb
+    let incedencaPovprecja = covidSummary.casesAvg7Days.diffPercentage;  // za koliko je povprečno število okužb naraslo/padlo v primerjavi s prejšnjim tednom
+
+    let aktivniPrimeri = covidStats.cases.active; // aktivni primeri
+    let hospitalizirani = covidStats.statePerTreatment.inHospital; // hospitalizirani
+    let intenzivnaTerapija = covidStats.statePerTreatment.inICU; // na intenzivni terapiji
+
+    let skupnoUmrlih = covidStats.statePerTreatment.deceasedToDate; // število umrlih
+    let umrli = covidStats.statePerTreatment.deceased; // število umrlih včeraj
+
+    let cepljeniDvakrat = covidStats.vaccination.administered2nd.toDate; 
+    let cepljeniEnkrat = covidStats.vaccination.administered.toDate; 
+    let cepljeniProcent = covidSummary.vaccinationSummary.subValues.percent; 
+
     res.render('menu_pages/statistika', {statistics:{  
             yesterdayTests:covidStats.performedTests, 
             yesterdayPositiveTests:covidStats.positiveTests,
