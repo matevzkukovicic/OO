@@ -258,6 +258,32 @@ path.bottom {
 .bcg{
   background: #f4f4f4;
 }
+.noviceCard{
+  font-family: Repro_bold;
+  border: 5px solid #000000 !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  margin-bottom: 1rem;
+
+}
+.noviceCard a{
+  color: black ;
+  text-decoration: none !important;
+
+}
+.noviceCard a :visited {
+   color: black !important;
+ }
+.noviceCard a :hover {
+  text-decoration: none !important;
+}
+.noviceFooter {
+  font-family: Repro_regular;
+  font-size: 1.6rem;
+  padding-top: 0.03rem !important;
+  padding-bottom: 0.01rem !important;
+  text-align: right;
+}
 
 @media (max-width: 875px) {
   .statistikaCard {

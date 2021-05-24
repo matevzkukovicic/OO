@@ -69,6 +69,10 @@
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 ">Aktivni primeri</h6>
                 <h4 class="card-title hatH4">{{data.aktivniPrimeri}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_aktivniPrimeri}} {{/percentColor}}">{{data.razlika_aktivniPrimeri}}%</span></h4>
+                <div class = "row statRow">
+                    <div class="col-lg-5 col-md-12 col-sm-12 statistikaFirstPic">     </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">     </div>
+                </div>
                 <p class="statDatum">{{data.datum}}</p>
             </div>
         </div>
@@ -97,6 +101,10 @@
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 ">V intenzivni terapiji</h6>
                 <h4 class="card-title hatH4">{{data.intenzivnaTerapija}}<span class="tealText smallText" style="color: {{#percentColor data.razlika_vIntenzivni}} {{/percentColor}}"> {{data.razlika_vIntenzivni}}% </span></h4>
+                <div class = "row statRow">
+                    <div class="col-lg-5 col-md-12 col-sm-12 statistikaFirstPic">     </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">     </div>
+                </div>
                 <p class="statDatum">{{data.datum}}</p>
             </div>
         </div>
@@ -121,8 +129,6 @@
                 <p class="statDatum">{{data.datum}}</p>
             </div>
         </div>
-
     </div>
-
 </div>
 </div>

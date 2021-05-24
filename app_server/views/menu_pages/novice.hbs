@@ -17,32 +17,15 @@
             height:30%;
             background: #E5E5E5;
             padding: 0px;
-            border-bottom: none;
+            border: none !important;
         }
-		.naslov{
-			margin-left:5%;
-			margin-top: 2%;
-			margin-bottom: 3%;
-			font-family: Repro_bold;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 56px;
-			line-height: 80px;
+        .modal-content{
+            border: none !important;
 
-			color: #000000;
-		}
-		.faza{
-            margin-left: 5vw;
-            margin-right: 5vw;
-			height: 120px;
-			width: 90vw;
-			border: 2px solid black;
-			border-radius: 1rem;
-			display: flex;
-			flex-wrap: wrap;
-			color: black;
-			font-family: Repro_screen;
-		}
+        }
+        body {
+                background: #f4f4f4 !important;
+        }
     </style>
 </head>
 <div class="bcg">
@@ -58,8 +41,7 @@
                 line-height: 80px;
                 letter-spacing: 0em;
                 text-align: left;
-                margin:5vh 5vw 0px 5vw"
-            >Novice</h5>
+                margin:5vh 5vw 0px 5vw">Novice</h5>
             <a href="/map" id="iks" style="margin:5vh 5vw 0px 5vw">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0px">
                     <span aria-hidden="true" style="font-size: 50px">&times;</span>
@@ -75,15 +57,19 @@
         text-align: left;
         margin:3% 5% 0% 5%;
         ">
-		<div class="container">
+		<div class="row justify-content-center">
 			{{#noviceText}}
-            <div class="mb-5" style="border: 3px solid #000000;">
-			<a href="{{href}}" style="text-decoration: none; margin:2%; font-family: Repro_screen; color:black">
-				<h5 style="font-size: 12px; margin:2%">{{datum}}</h5>
-				<h1 style="font-size: 26px; margin:0% 2% 2% 2%">{{naslov}}</h1>
-			</a>
-            </div>
-			{{/noviceText}}
+                <div class="card  noviceCard margin-auto col-lg-8 col-md-12 " >
+                    <a href="{{href}}">
+
+                    <div class="card-body ">{{naslov}}</div>
+                    <div class="card-footer text-muted noviceFooter">
+                        {{datum}}
+                    </div>
+                    </a>
+                </div>
+
+            {{/noviceText}}
 		</div>
     </div>
     </div>

@@ -470,7 +470,7 @@ const statistika = async(req, res) => {
         skupnoUmrlih: covidStats.deceasedToDate,
        cepljeniDvakrat : covidStats.vaccination.administered2nd.toDate,
        cepljeniEnkrat : covidStats.vaccination.administered.toDate,
-        cepljeniProcent : covidSummary.vaccinationSummary.subValues.percent,
+        cepljeniProcent : covidSummary.vaccinationSummary.subValues.percent.toString().substring(0,4),
         razlika_aktivniPrimeri : razlika_aktivniPrimeri,
         razlika_noviPrimeri : razlika_noviPrimeri,
         razlika_hospitalizirani : razlika_hospitalizirani,
