@@ -20,6 +20,60 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-rfs/bootstrap-rfs.css">
+	<style>
+		/* The side navigation menu */
+		.sidenav {
+		  height: 100%; /* 100% Full-height */
+		  width: 0; /* 0 width - change this with JavaScript */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Stay on top */
+		  top: 0; /* Stay at the top */
+		  right: 0;
+		  background-color: #FFFFFF;
+		  overflow-x: hidden; /* Disable horizontal scroll */
+		  padding-top: 60px; /* Place content 60px from the top */
+		  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+		}
+
+		/* The navigation menu links */
+		.sidenav a {
+		  padding: 8px 8px 8px 32px;
+		  text-decoration: none;
+		  font-size: 25px;
+		  color: #000000;
+		  display: block;
+		  transition: 0.3s;
+		}
+
+
+		/* Position and style the close button (top right corner) */
+		.sidenav .closebtn {
+		  position: absolute;
+		  top: 0;
+		  right: 25px;
+		  font-size: 36px;
+		  margin-left: 50px;
+		}
+
+		.dropdown-item {
+			font-family: Repro_screen;
+			font-size: 32px;
+			font-weight: bold;
+		}
+
+		.bolezen-drop {
+			transition: 0.5s;
+			max-height:0px;
+			overflow: hidden;
+		}
+
+
+		/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+		@media screen and (max-height: 576px) {
+		  .sidenav {padding-top: 15px;}
+		  .sidenav a {font-size: 18px;}
+		}
+	</style>
 
 </head>
 <body style="background-color: #f4f4f4;">
@@ -70,25 +124,40 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <div class="btn-group dropleft">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Menu
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/semafor">Semafor</a>
-                            <a class="dropdown-item" href="/statistika">Statistika</a>
-                            <h6 class="dropdown-header">Bolezen</h6>
-                            <a class="dropdown-item" href="/simptomi">&#8658; Simptomi</a>
-                            <a class="dropdown-item" href="/preprecevanje">&#8658; Preprečevanje</a>
-                            <a class="dropdown-item" href="/zdravljenje">&#8658; Zdravljenje</a>
-                            <a class="dropdown-item" href="/novice">Novice</a>
+						<span onclick="openNav()">
+							<div style="width: 35px;
+							  height: 5px;
+							  background-color: black;
+							  margin: 6px 0;"></div>
+							<div style="width: 35px;
+							  height: 5px;
+							  background-color: black;
+							  margin: 6px 0;"></div>
+							<div style="width: 35px;
+							  height: 5px;
+							  background-color: black;
+							  margin: 6px 0;"></div>
+						</span>
+                        <div class="sidenav" id="mySidenav">
+							<div id="items">
+								<a href ="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+								<a class="dropdown-item" href="/semafor">Semafor</a>
+								<a class="dropdown-item" href="/statistika">Statistika</a>
+								<a class="dropdown-item" onclick="openBol()">Bolezen</a>
+								<div id="bolezen-drop" class="bolezen-drop" style="max-height:0px">
+									<a class="dropdown-item" style="font-weight: normal" href="/simptomi">&#8594; Simptomi</a>
+									<a class="dropdown-item" style="font-weight: normal" href="/preprecevanje">&#8594; Preprečevanje</a>
+									<a class="dropdown-item" style="font-weight: normal" href="/zdravljenje">&#8594; Zdravljenje</a>
+								</div>
+								<a class="dropdown-item" href="/novice">Novice</a>
+							</div>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <main>
+    <main id="main">
         <div class="container-fluid mt-4 content">
             {{{body}}}
         </div>
@@ -97,5 +166,27 @@
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf-8" src="../javascripts/eyeTracking.js"></script>
+	<script>
+		function openNav() {
+			if(window.innerWidth<576){
+				document.getElementById("mySidenav").style.width = "100%";
+				document.getElementById("items").style.paddingTop = "35vh";
+			}else{
+				document.getElementById("mySidenav").style.width = "35vw";
+				document.getElementById("items").style.paddingTop = "30vh";
+			}
+		}
+
+		function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0";
+		}
+
+		function openBol() {
+		    if(document.getElementById("bolezen-drop").style.maxHeight=="0px")
+		    	document.getElementById("bolezen-drop").style.maxHeight="500px";
+		    else
+				document.getElementById("bolezen-drop").style.maxHeight="0px";
+		}
+	</script>
 </body>
 </html>
