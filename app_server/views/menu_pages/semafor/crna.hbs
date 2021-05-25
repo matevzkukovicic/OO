@@ -59,15 +59,20 @@
             <li>dovoljena je brezkontaktna športna aktivnost na prostem in individualna vadba ter vadba družin.</li>
         </ul>
     </div>
-    <img src="/images/panda_crni_semafor.svg" class = "pandaImages">
+    <img src="/images/panda_crni_semafor.svg" class = "pandaImages" id="pandaimage">
 </div>
 <script>
+
 	document.getElementsByTagName("body")[0].setAttribute("style", "background-color: #E5E5E5; padding: 0px")
     if(window.innerWidth<576){
+        document.getElementById("pandaimage").setAttribute("src", "/images/crna_mobile.svg")
+		document.getElementById("pandaimage").style.position="absolute"
+		document.getElementById("pandaimage").style.right="22px"
+		document.getElementById("pandaimage").style.top="100px"
         document.getElementsByTagName("body")[0].setAttribute("style", "background: #98999A; padding:0%")
         document.getElementsByTagName("h5")[0].setAttribute("style", "font-family:Repro_screen;" +
                 "font-size: 38px;font-style: normal;font-weight: 700; line-height: 54,49px;" +
-                "letter-spacing: 0em;text-align: left;margin:2vh 3vw 25vh 5.5vw")
+                "letter-spacing: 0em;text-align: left;margin:2vh 3vw 25vh 5%;padding:1rem")
         document.getElementById("text").setAttribute("style", "font-family: Repro_screen;font-size: 18px;" +
                 "font-style: normal;font-weight: 400;line-height: 26px;letter-spacing: 0em;" +
                 "text-align: left;margin:3% 5% 0% 5%;")
